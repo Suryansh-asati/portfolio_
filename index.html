@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="Resume_Suryansh_Asati.pdf" class="resume-btn " download><i class="fas fa-download"></i> Resume</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <div class="profile-upload">
+                <img src="pfp.jpg" alt="Profile Picture" id="profile-preview" class="profile-picture">
+                <!-- <label for="profile-input" class="upload-btn">
+                    <i class="fas fa-camera"></i>
+                </label>
+                <input type="file" id="profile-input" accept="image/*" class="hidden"> -->
+            </div>
+            <h1 style="color: var(--text-color);">Hello, this is Suryansh</h1>
+            <p>I'm a passionate developer creating amazing digital experiences</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 data-aos="fade-up">About Me</h2>
+        <div class="about-content" data-aos="fade-up" data-aos-delay="200">
+            <div class="about-text">
+                <p>Hello! I'm a creative developer with a passion for building beautiful and functional websites. I love turning ideas into reality through code.</p><br>
+                <p>With a background in Computer Science and Engineering, I bring a unique perspective to my work. I'm passionate about creating intuitive and user-friendly interfaces, and I love solving complex problems through code.</p><br>
+                <p>Currently I'm learning Python and focusing on my journey as a Data Analytics Enginerring.</p>
+                <div class="skills">
+                    <h3>Skills</h3>
+                    <ul class="skills-grid">
+                        <li class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </li>
+                        <li class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </li>
+                        <li class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </li>
+                        <li class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+                            <i class="fab fa-c"></i>
+                            <span>C/C++</span>
+                        </li>
+                        <!-- <li class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+                            <i class="fab fa-node-js"></i>
+                            <span>Node.js</span>
+                        </li> -->
+                    </ul>
+                </div>
+                <div class="skills">
+                    <h3>Learning Docket</h3>
+                    <ul class="skills-grid">
+                        <li class="skill-item" data-aos="zoom-in" data-aos-delay="100">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </li>
+                        <li class="skill-item" data-aos="zoom-in" data-aos-delay="200">
+                            <i class="fab fa-figma"></i>
+                            <span>Figma</span>
+                        </li>
+                        <li class="skill-item" data-aos="zoom-in" data-aos-delay="300">
+                            <i class="fab fa-react"></i>
+                            <span>React</span>
+                        </li>
+                        <li class="skill-item" data-aos="zoom-in" data-aos-delay="400">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </li>
+                        <li class="skill-item" data-aos="zoom-in" data-aos-delay="500">
+                            <i class="fab fa-bootstrap"></i>
+                            <span>Bootstrap</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- After Learning Docket section -->
+                <div class="resume-section" data-aos="fade-up" data-aos-delay="200">
+                    <h2>My Resume</h2>
+                    <p>Want to know more about my experience and qualifications?</p>
+                    <a href="Resume_Suryansh_Asati.pdf" class="resume-download-btn" download>
+                        <i class="fas fa-file-download"></i>
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 data-aos="fade-up">My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="project-image">
+                    <img src="project1.png" alt="Project 1">
+                    <div class="project-overlay">
+                        <div class="project-tech">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Well-Being-Hub</h3>
+                    <p>The one-step solution to get relief from your stress. Live a stress-free life!</p>
+                    <div class="project-links">
+                        <a href="https://github.com/Suryansh-asati/Well-Being-Hub" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://suryansh-asati.github.io/Well-Being-Hub/" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="project-image">
+                    <img src="project2.jpg" alt="Project 2">
+                    <div class="project-overlay">
+                        <div class="project-tech">
+                            <span>Flutter</span>
+                            <span>Firebase</span>
+                            <span>Botpress</span>
+                            <span>Pathway</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>My Banko App</h3>
+                    <p>My Banko, is more than just a chatbot—it’s a step toward financial empowerment for underserved and remote communities.</p>
+                    <!-- <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <!-- <h2 data-aos="fade up" data-aos-delay="200">Many more to come.....</h2> -->
+    </section>
+
+    <section id="hobbies" class="hobbies">
+        <h2 data-aos="fade-up">Hobbies & Music</h2>
+        <div class="hobbies-content" data-aos="fade-up" data-aos-delay="200">
+            <div class="hobbies-grid">
+                <div class="hobby-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-music"></i>
+                    <h3>Music</h3>
+                    <p>Born to be a 90s fan, Forced to be GenZ</p>
+                    <p>Check out this Playlist:</p>
+                    <iframe src="https://open.spotify.com/embed/playlist/6Hg66ZOX7D6PgbFa8uV40R?utm_source=generator" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" class="spotify-embed" title="My Spotify Playlist"></iframe>
+                </div>
+                <!-- <div class="hobby-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-gamepad"></i>
+                    <h3>Gaming</h3>
+                    <p>I enjoy playing video games in my free time, especially strategy and RPG games.</p>
+                </div> -->
+                <div class="hobby-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-camera"></i>
+                    <h3>Photography</h3>
+                    <p>I love capturing moments and exploring photography as a creative outlet.</p>
+                    <div class="instagram-embed">
+                        <blockquote 
+                            class="instagram-media" 
+                            data-instgrm-permalink="https://www.instagram.com/lightart.as/"
+                            data-instgrm-version="14">
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<div class="card-container" id="contact" data-aos="fade-up" data-aos-delay="200">
+    <div class="card">
+        <div class="banner">
+            <span class="banner-text">Connect</span>
+            <span class="banner-text">Connect</span>
+        </div>
+        <span class="card__title">Connect With me</span>
+        <p class="card__subtitle">Type in your email and I'll send you a message</p>
+        <form class="card__form">
+            <input placeholder="Your Email" type="email" required="" />
+            <button type="submit" class="sign-up">Sign up</button>
+        </form>
+        </div>
+    </div>
+    <!-- <section id="contact" class="contact">
+        <h2 data-aos="fade-up">Get in Touch</h2>
+        <div class="contact-content" data-aos="fade-up" data-aos-delay="200">
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required placeholder="Your Name">
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required placeholder="Your Email">
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+                </div>
+                <button type="submit" class="submit-button">
+                    <span>Send Message</span>
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form> -->
+            <div class="below-form" data-aos="fade-up" data-aos-delay="200">
+            <h3 data-aos="fade-up" data-aos-delay="200">Also connect with me at:</h3>
+            <div class="social-links">
+                
+                <a href="www.linkedin.com/in/suryansh-asati" class="social-link" data-aos="zoom-in" data-aos-delay="200" title="Linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/suryansh.asati/" class="social-link" data-aos="zoom-in" data-aos-delay="300" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/Suryansh-asati" class="social-link" data-aos="zoom-in" data-aos-delay="100" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Suryansh Asati. All rights reserved.</p>
+    </footer>
+
+    <script async src="https://www.instagram.com/embed.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
