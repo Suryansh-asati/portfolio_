@@ -6,13 +6,13 @@
 }
 
 :root {
-    --primary-color: #C70039;   /* Deep Crimson - grabs attention */
-  --secondary-color: #0F0F0F; /* Almost black - mysterious base */
+    --primary-color: #C70039;
+  --secondary-color: #0F0F0F;
   --text-color: #F1F1F1; 
-  --text-card-color: #bc3908;     /* Light gray - easy on dark bg */
-  --light-text: #888888;      /* Soft muted gray for subtext */
-  --background: #1A1A1D;      /* Dark background with a hint of depth */
-  --section-bg: #2C2C2E;      /* Slightly lighter than background for sections */
+  --text-card-color: #C70039;
+  --light-text: #888888;     
+  --background: #1A1A1D;     
+  --section-bg: #2C2C2E;     
 --transition: all 0.3s ease;
   }
   
@@ -191,7 +191,7 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-    background-color: var(--text-card-color);
+    background-color: #bc3908;
     transform: translateY(-2px);
 }
 
