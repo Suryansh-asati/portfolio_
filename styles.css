@@ -249,7 +249,7 @@ nav ul li a:hover {
     transition: var(--transition);
 }
 .skill-item span{
-    color: var(--text-card-color);
+    color: var(--primary-color);
 }
 
 .skill-item:hover {
