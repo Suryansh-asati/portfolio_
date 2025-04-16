@@ -6,7 +6,7 @@ AOS.init({
 });
 
 // Mobile Navigation Toggle
-const burger = document.querySelector('.burger');
+const burger = document.querySelector('.checkbox');
 const nav = document.querySelector('.nav-links');
 const navLinks = document.querySelectorAll('.nav-links li');
 
@@ -24,7 +24,7 @@ burger.addEventListener('click', () => {
     });
 
     // Burger Animation
-    burger.classList.toggle('toggle');
+    checkbox.classList.toggle('toggle');
 });
 
 // Smooth Scrolling for Navigation Links
@@ -39,7 +39,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
             // Close mobile menu if open
             nav.classList.remove('active');
-            burger.classList.remove('toggle');
+            checkbox.classList.remove('toggle');
         }
     });
 });
