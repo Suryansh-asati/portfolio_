@@ -115,9 +115,7 @@ nav ul li a:hover {
     justify-content: center;
     text-align: center;
     padding: 6rem 1rem;
-    background:url(hero-bg.jpg) no-repeat center center/cover;
-    position: relative;
-    transform: 180deg;
+    background: linear-gradient(135deg, var(--primary-color)0%, var(--background) 100%);
 }
 
 .hero-content {
