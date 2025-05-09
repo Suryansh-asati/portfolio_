@@ -117,6 +117,7 @@ nav ul li a:hover {
     padding: 6rem 1rem;
     background:url(hero-bg.jpg) no-repeat center center/cover;
     position: relative;
+    transform: 180deg;
 }
 
 .hero-content {
