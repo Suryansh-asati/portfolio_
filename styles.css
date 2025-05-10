@@ -502,7 +502,7 @@ nav ul li a:hover {
 }
 
 .submit-button:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--light-text);
     transform: translateY(-2px);
 }
 
