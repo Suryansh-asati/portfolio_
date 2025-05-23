@@ -116,6 +116,8 @@ nav ul li a:hover {
 .resume-btn:hover {
     background-color: var(--secondary-color);
     transform: translateY(-2px);
+    transition: var(--transition);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Hero Section */
