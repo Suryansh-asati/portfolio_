@@ -276,3 +276,23 @@ function exportEmailsToCSV() {
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
 }
+
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.1
+};
+
+const appearOnScroll = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
