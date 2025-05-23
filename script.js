@@ -5,6 +5,22 @@ AOS.init({
     offset: 100
 });
 
+// Fade-in Animation Observer
+const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+// Observe all fade-in elements
+document.querySelectorAll('.fade-in').forEach(element => {
+    fadeObserver.observe(element);
+});
+
 // Mobile Navigation Toggle
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');

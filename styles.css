@@ -27,6 +27,20 @@ body {
     color: var(--text-color);
 }
 
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, filter 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
 /* Navigation */
 .navbar {
     position: fixed;
@@ -905,4 +919,3 @@ footer {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-  
