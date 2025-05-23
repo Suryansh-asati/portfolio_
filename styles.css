@@ -80,7 +80,7 @@ body {
     text-decoration: none;
     color: var(--text-card-color);
     font-weight: 500;
-    transition: var(--transition);
+    /* transition: var(--transition); */
     position: relative;
 }
 
@@ -693,7 +693,7 @@ footer {
   border: 8px solid var(--text-color);
   box-shadow: 15px 15px 0 var(--text-color);
   transform: rotate(-2deg);
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
   position: relative;
   overflow: hidden;
   }
@@ -718,11 +718,11 @@ footer {
     font-size: 18px;
     letter-spacing: 2px;
     overflow: hidden;
-    transition: background 0.5s ease;
+    /* transition: background 0.5s ease; */
   }
   .banner-text {
     display: inline-block;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* transition: opacity 0.5s ease, transform 0.5s ease; */
     width: 100%;
     position: absolute;
     left: 13%;
@@ -771,7 +771,7 @@ footer {
     border: 4px solid var(--text-color);
     font-size: 16px;
     font-family: "Proxima Nova", sans-serif;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
     background-color: var(--background);
   }
   .card__form input:focus {
@@ -787,7 +787,7 @@ footer {
     font-weight: bold;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
   }
   .sign-up:hover {
     background: #fff;
