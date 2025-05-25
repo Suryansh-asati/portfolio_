@@ -66,7 +66,7 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1em;
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
@@ -76,7 +76,7 @@ body {
 .logo:hover {
     color: var(--text-color);
     transform: translateY(-2px) ;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-links {
@@ -297,23 +297,25 @@ nav ul li a:hover {
     align-items: center;
     gap: 0.5rem;
     padding: 1.5rem;
-    background-color: var(--background);
+    background-color: var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
 }
 .skill-item span{
-    color: var(--primary-color);
+    color: var(--background);
 }
 
 .skill-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) rotate(1deg);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--text-card-color);
     transition: var(--transition);
 }
 
 .skill-item i {
     font-size: 2.5rem;
-    color: var(--primary-color);
+    color: var(--background);
 }
 
 /* Projects Section */
@@ -344,10 +346,12 @@ nav ul li a:hover {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: var(--transition);
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-10px) rotate(1deg);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     transition: var(--transition);
 }
@@ -438,6 +442,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     gap: 0.3rem;
+    transition: var(--transition);
 }
 
 .project-link:hover {
@@ -592,7 +597,7 @@ nav ul li a:hover {
 
 .social-link:hover {
     color: var(--primary-color);
-    transform: translateY(-3px);
+    transform: translateY(-7px);
     transition: var(--transition);
 }
 
@@ -620,6 +625,7 @@ footer {
     height: 3px;
     background-color: var(--text-color);
     margin: 5px;
+    transition: var(--transition);
 }
 
 /* Responsive Design */
@@ -633,6 +639,7 @@ footer {
         flex-direction: column;
         align-items: center;
         padding: 2rem;
+        transition: var(--transition);
     }
 
     .nav-links.active {
@@ -641,6 +648,7 @@ footer {
 
     .nav-links li {
         margin: 1rem 0;
+        transition: var(--transition);
     }
 
     .burger {
@@ -649,14 +657,17 @@ footer {
 
     .burger.toggle div:nth-child(1) {
         transform: rotate(-45deg) translate(-5px, 6px);
+        transition: var(--transition);
     }
 
     .burger.toggle div:nth-child(2) {
         opacity: 0;
+        transition: var(--transition);
     }
 
     .burger.toggle div:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
+        transition: var(--transition);
     }
 
     .hero-content h1 {
@@ -968,11 +979,12 @@ footer {
     text-decoration: none;
     border-radius: 5px;
     font-weight: 500;
+    transition: var(--transition);
 }
 
 .resume-download-btn:hover {
     background-color: var(--text-card-color);
-    color: var(--text-color);
+    color: var(--background);
     transform: translateY(-2px) rotate(0.5deg);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
