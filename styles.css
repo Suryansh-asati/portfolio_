@@ -966,8 +966,9 @@ footer {
 }
 
 .resume-section:hover{
-    transform: rotate(1deg) translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px) rotate(0.5deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: var(--transition);
 }
 
 .resume-section h2 {
