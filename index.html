@@ -11,7 +11,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar glass">
+    <nav class="navbar ">
         <div class="logo">Suryansh's Portfolio</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
@@ -31,10 +31,6 @@
         <div class="hero-content">
             <div class="profile-upload">
                 <img src="pfp.jpg" alt="Profile Picture" id="profile-preview" class="profile-picture">
-                <!-- <label for="profile-input" class="upload-btn">
-                    <i class="fas fa-camera"></i>
-                </label>
-                <input type="file" id="profile-input" accept="image/*" class="hidden"> -->
             </div>
             <h1 style="color: var(--text-color);">Hello, this is Suryansh</h1>
             <p>I'm a passionate developer creating amazing digital experiences</p>
@@ -43,8 +39,8 @@
     </section>
 
     <section id="about" class="about fade-in">
-        <h2>About Me</h2>
-        <div class="about-content" data-aos-delay="200">
+        <h2 class="scroll-animate">About Me</h2>
+        <div class="about-content scroll-animate" data-aos-delay="200">
             <div class="about-flex-container">
                 <div class="about-image">
                     <img src="download.jpg" alt="Coding laptop visualization" class="about-laptop-img">
@@ -225,8 +221,9 @@
                 <a href="https://github.com/Suryansh-asati" class="social-link fade-in"  data-aos-delay="100" title="GitHub"><i class="fab fa-github"></i></a>
             </div>
         </div>
-        <!-- <h3 class="text-footer">Made with ❤️ by Suryansh </h3> -->
-        <h3 class="fade-in"  style="color: var(--text-color);">Made with ❤️ by Suryansh </h3>
+        <div class="fade-in footer-text">
+            <quote>Make everyday worth it </quote> 
+        </div>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

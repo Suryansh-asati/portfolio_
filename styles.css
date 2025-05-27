@@ -14,14 +14,14 @@
     --background: #efeafa;     
     --section-bg: #89daff;     
 --transition: all 0.3s ease;  
-    --transition-back: all 1s ease-in-out; 
+    --transition-back: all 1s ease; 
 --eerie-black-1: #202124;         
     --eerie-black-2: #1f1f21;       
     --smoky-black: #121212;         
     --orange-yellow-crayola: #ffe169;
     --vegas-gold: #c9b458;    
     --border-gradient-onyx: linear-gradient(135deg,  #32166a , #78c1e3);
-    --color-gradient-golenborwn: linear-gradient(135deg,  #c9b458 , #57370d);
+    --color-gradient-navlink: linear-gradient(135deg,  #2368a9 , #78c1e3, #32166a);
     --shadow-1: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-2: 0 6px 12px rgba(0, 0, 0, 0.1);
     --shadow-3: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -102,7 +102,7 @@ body {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--smoky-black);
+    color: var(--primary-color);
     font-weight: 500;
     transition: var(--transition-back);
     position: relative;
@@ -176,26 +176,13 @@ nav ul li a:hover {
     object-fit: cover;
     border: 4px solid white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-back);
 }
 
-.upload-btn {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background-color: var(--primary-color);
-    color: white;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.upload-btn:hover {
-    background-color: var(--secondary-color);
-    transform: scale(1.1);
+.profile-picture:hover{
+    transform: scale(1.05) rotate(0.5deg);
+    transition: var(--transition);
+    border: 4px solid var(--vegas-gold);
 }
 
 .hidden {
@@ -559,14 +546,26 @@ nav ul li a:hover {
     width: 100%;
     padding: 1rem;
     border: 2px solid #e5e7eb;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',Monstserrat, sans-serif, monospace;
+    color: var(--primary-color);
+    background-color: var(--background);
+    transition: var(--transition-back);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
+    border-color: var(--smoky-black);
+    transition: var(--transition);
+}
+
+.form-group input:hover,
+.form-group textarea:hover {
+    outline: none;
+    border-color: var(--light-text);
+    transition: var(--transition);
 }
 
 .form-group textarea {
@@ -632,9 +631,11 @@ footer {
     /* color: white; */
 }
 
-.text-footer {
+.footer-text {
     position: relative;
-    color: var(--light-text);
+    color: var(--smoky-black);
+    font-size: 1rem;
+    
 }
 
 /* Mobile Navigation */
@@ -659,7 +660,7 @@ footer {
         right: -100%;
         top: 100%;
         height: calc(100vh-100px );
-        background: var(--color-gradient-golenborwn);
+        background: var(--color-gradient-navlink);
         opacity: 0.959;
         backdrop-filter: blur(5px);
         flex-direction: column;
@@ -1069,9 +1070,15 @@ footer {
   position: absolute;
   top: -25px;
   left: -30px;
+  margin-left: 0;
   width: 1px;
   height: calc(100% + 50px);
   background: var(--vegas-gold);
+  align-items: center;
+  display: flex;
+    justify-content: center;
+    box-shadow: 0 0 0 4px var(--eerie-black-2);
+    transition: var(--transition);
 }
 .timeline-item::after {
   content: "";
@@ -1083,6 +1090,7 @@ footer {
   background: var(--orange-yellow-crayola);
   border-radius: 50%;
   box-shadow: 0 0 0 4px var(--eerie-black-2);
+  transition: var(--transition);
 }
 
 .timeline-item p{
@@ -1099,7 +1107,21 @@ footer {
     height: 8px;
     width: 8px;
     left: -43px;
+    transition: var(--transition);
   }
+
+.timeline-item:hover::after {
+    height: 10px;
+    width: 10px;
+    left: -45px;
+    box-shadow: 0 0 0 6px var(--eerie-black-2);
+    transition: var(--transition);
+}
+.timeline-item:hover::before {
+    background: var(--orange-yellow-crayola);
+    box-shadow: 0 0 0 4px var(--eerie-black-2);
+    transition: var(--transition);
+}
 
 .edu{
     color: var(--background);
@@ -1108,6 +1130,7 @@ footer {
 
 .icon-box {
   position: relative;
+  margin-left: 5.5px;
   background: var(--border-gradient-onyx);
   width: 40px;
   height: 40px;
@@ -1129,7 +1152,26 @@ footer {
   border-radius: inherit;
   z-index: -1;
 }
-.icon-box ion-icon { --ionicon-stroke-width: 35px; }
+.icon-box ion-icon { 
+    width: 45%;
+    height: 45%;
+    --ionicon-stroke-width: 45px;
+    --ionicon-stroke-color: var(--orange-yellow-crayola); 
+    align-self: center;
+    transition: var(--transition-back);
+}
+.icon-box:hover {
+    transform: translateY(-2px) rotate(0.5deg);
+    box-shadow: var(--shadow-2);
+    transition: var(--transition);
+}
+
+.icon-box:hover ion-icon {
+    --ionicon-stroke-width: 50px;
+    --ionicon-stroke-color: var(--secondary-color);
+    transform: scale(1.1);
+    transition: var(--transition);
+}
 article { display: none; }
 article.active {
   display: block;
