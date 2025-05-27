@@ -1,58 +1,54 @@
-// Initialize Animate On Scroll library with custom configuration
+// Initialize AOS (Animate On Scroll)
 AOS.init({
-    duration: 800,      // Animation duration in milliseconds
-    once: true,         // Animation occurs only once
-    offset: 100         // Offset (in px) from the original trigger point
+    duration: 800,
+    once: true,
+    offset: 100
 });
 
-// Initialize fade-in animation using Intersection Observer API
+// Fade-in Animation Observer
 const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        // Add 'visible' class when element enters viewport
         if (entry.isIntersecting) {
             entry.target.classList.add('visible');
         }
     });
 }, {
-    threshold: 0.1  // Trigger when 10% of element is visible
+    threshold: 0.1
 });
 
-// Apply fade observer to all elements with 'fade-in' class
+// Observe all fade-in elements
 document.querySelectorAll('.fade-in').forEach(element => {
     fadeObserver.observe(element);
 });
 
-// Mobile Navigation Setup
+// Mobile Navigation Toggle
 const burger = document.querySelector('.burger');
 const nav = document.querySelector('.nav-links');
 const navLinks = document.querySelectorAll('.nav-links li');
 
-// Handle mobile menu toggle
 burger.addEventListener('click', () => {
-    // Toggle mobile navigation visibility
+    // Toggle Navigation
     nav.classList.toggle('active');
 
-    // Animate each navigation link with a staggered delay
+    // Animate Links
     navLinks.forEach((link, index) => {
         if (link.style.animation) {
             link.style.animation = '';
         } else {
-            // Add staggered animation to each link
             link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
         }
     });
 
-    // Animate burger menu icon
+    // Burger Animation
     burger.classList.toggle('toggle');
 });
 
-// Implement smooth scrolling for all anchor links
+// Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            // Smooth scroll to target section
             target.scrollIntoView({
                 behavior: 'smooth',
                 block: 'start'
@@ -64,45 +60,57 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect implementation
+// Navbar Scroll Effect
 const navbar = document.querySelector('.navbar');
 let lastScroll = 0;
 
-// Handle navbar visibility on scroll
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
-    // Reset navbar state at page top
     if (currentScroll <= 0) {
         navbar.classList.remove('scrolled');
         return;
     }
     
-    // Add/remove scrolled class based on scroll direction
     if (currentScroll > lastScroll && !navbar.classList.contains('scrolled')) {
-        // Scrolling down - hide navbar
+        // Scrolling down
         navbar.classList.add('scrolled');
     } else if (currentScroll < lastScroll && navbar.classList.contains('scrolled')) {
-        // Scrolling up - show navbar
+        // Scrolling up
         navbar.classList.remove('scrolled');
     }
     
     lastScroll = currentScroll;
 });
 
+// Profile Picture Upload
+const profileInput = document.getElementById('profile-input');
+const profilePreview = document.getElementById('profile-preview');
 
+profileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            profilePreview.src = e.target.result;
+            // Save to localStorage
+            localStorage.setItem('profilePicture', e.target.result);
+        };
+        reader.readAsDataURL(file);
+    }
+});
 
-// Load saved profile picture from local storage
+// Load saved profile picture
 const savedProfilePicture = localStorage.getItem('profilePicture');
 if (savedProfilePicture) {
     profilePreview.src = savedProfilePicture;
 }
 
-// Resume download functionality
+// Resume Download
 const resumeBtn = document.querySelector('.resume-btn');
 resumeBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    // Create temporary link for download
+    // Replace with your actual resume URL
     const resumeUrl = 'path/to/your/resume.pdf';
     const link = document.createElement('a');
     link.href = resumeUrl;
@@ -112,7 +120,7 @@ resumeBtn.addEventListener('click', (e) => {
     document.body.removeChild(link);
 });
 
-// Contact form submission handler
+// Form Submission with Animation
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -125,24 +133,24 @@ if (contactForm) {
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitButton.disabled = true;
         
-        // Get form field values
+        // Get form values
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
 
-        // Create mailto link with form data
+        // Create mailto link with subject and body
         const mailtoLink = `mailto:suryansh.asati1@gmail.com?subject=Portfolio Contact Form: ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
         
         // Open default email client
         window.location.href = mailtoLink;
 
-        // Show success message
+        // Show success state
         submitButton.innerHTML = '<i class="fas fa-check"></i> Email Client Opened!';
         
         // Reset form
         contactForm.reset();
         
-        // Reset button state after delay
+        // Reset button after 2 seconds
         setTimeout(() => {
             submitButton.innerHTML = originalText;
             submitButton.disabled = false;
@@ -150,9 +158,8 @@ if (contactForm) {
     });
 }
 
-// Project card hover animations
+// Project Card Hover Effect
 document.querySelectorAll('.project-card').forEach(card => {
-    // Add hover effects
     card.addEventListener('mouseenter', () => {
         card.style.transform = 'translateY(-10px)';
         card.querySelector('.project-overlay').style.opacity = '1';
@@ -164,7 +171,7 @@ document.querySelectorAll('.project-card').forEach(card => {
     });
 });
 
-// Skill item hover animations
+// Skill Item Animation
 document.querySelectorAll('.skill-item').forEach(item => {
     item.addEventListener('mouseenter', () => {
         item.style.transform = 'translateY(-5px)';
@@ -175,24 +182,23 @@ document.querySelectorAll('.skill-item').forEach(item => {
     });
 });
 
-// Social links hover animations
+// Social Links Animation
 document.querySelectorAll('.social-link').forEach(link => {
     link.addEventListener('mouseenter', () => {
         link.style.transform = 'translateY(-3px)';
     });
 
-    item.addEventListener('mouseleave', () => {
+    link.addEventListener('mouseleave', () => {
         link.style.transform = 'translateY(0)';
     });
 });
 
-// Scroll animation configuration
+// Intersection Observer for Scroll Animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
-// Initialize scroll observer for animations
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -202,52 +208,50 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Apply scroll animations to sections and elements
+// Observe all sections and animated elements
 document.querySelectorAll('section, .skill-item, .project-card').forEach(element => {
     observer.observe(element);
 });
 
-// Newsletter subscription handling
+// Newsletter form handling
 const newsletterForm = document.querySelector('.card__form');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const emailInput = this.querySelector('input[type="email"]');
-        const email = emailInput.value.trim();
+newsletterForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const emailInput = this.querySelector('input[type="email"]');
+    const email = emailInput.value.trim();
+    
+    if (email) {
+        // Create mailto link for newsletter subscription
+        const mailtoLink = `mailto:suryansh.asati1@gmail.com?subject=Newsletter Subscription&body=Please add this email to newsletter: ${email}`;
         
-        if (email) {
-            // Create mailto link for newsletter subscription
-            const mailtoLink = `mailto:suryansh.asati1@gmail.com?subject=Newsletter Subscription&body=Please add this email to newsletter: ${email}`;
-            
-            // Save email to local storage
-            let savedEmails = JSON.parse(localStorage.getItem('newsletterEmails') || '[]');
-            savedEmails.push({
-                email: email,
-                date: new Date().toISOString()
-            });
-            localStorage.setItem('newsletterEmails', JSON.stringify(savedEmails));
-            
-            // Open email client
-            window.location.href = mailtoLink;
-            
-            // Clear input and show success message
-            emailInput.value = '';
-            
-            const signUpButton = this.querySelector('.sign-up');
-            const originalText = signUpButton.textContent;
-            signUpButton.textContent = 'Subscribed!';
-            signUpButton.style.backgroundColor = 'var(--primary-color)';
-            
-            // Reset button state after delay
-            setTimeout(() => {
-                signUpButton.textContent = originalText;
-                signUpButton.style.backgroundColor = '';
-            }, 2000);
-        }
-    });
-}
+        // Save to localStorage
+        let savedEmails = JSON.parse(localStorage.getItem('newsletterEmails') || '[]');
+        savedEmails.push({
+            email: email,
+            date: new Date().toISOString()
+        });
+        localStorage.setItem('newsletterEmails', JSON.stringify(savedEmails));
+        
+        // Open email client
+        window.location.href = mailtoLink;
+        
+        // Clear the input and show success message
+        emailInput.value = '';
+        
+        // Show success message with animation
+        const signUpButton = this.querySelector('.sign-up');
+        const originalText = signUpButton.textContent;
+        signUpButton.textContent = 'Subscribed!';
+        signUpButton.style.backgroundColor = 'var(--primary-color)';
+        
+        setTimeout(() => {
+            signUpButton.textContent = originalText;
+            signUpButton.style.backgroundColor = '';
+        }, 2000);
+    }
+});
 
-// Utility function to get saved newsletter emails
+// Function to get all saved emails with timestamps
 function getSavedEmails() {
     const emails = JSON.parse(localStorage.getItem('newsletterEmails') || '[]');
     return emails.map(entry => ({
@@ -256,13 +260,12 @@ function getSavedEmails() {
     }));
 }
 
-// Export newsletter emails to CSV
+// Function to export emails to CSV
 function exportEmailsToCSV() {
     const emails = getSavedEmails();
     const csvContent = "Email,Subscription Date\n" + 
         emails.map(entry => `${entry.email},${entry.subscribed}`).join("\n");
     
-    // Create and trigger download
     const blob = new Blob([csvContent], { type: 'text/csv' });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement('a');
@@ -273,3 +276,23 @@ function exportEmailsToCSV() {
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
 }
+
+const faders = document.querySelectorAll('.fade-in');
+
+const appearOptions = {
+  threshold: 0.1
+};
+
+const appearOnScroll = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    } else {
+      entry.target.classList.remove('visible');
+    }
+  });
+}, appearOptions);
+
+faders.forEach(fader => {
+  appearOnScroll.observe(fader);
+});
