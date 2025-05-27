@@ -3,7 +3,7 @@
 A modern, responsive portfolio website showcasing my projects, skills, and professional journey. Built with a focus on clean design, smooth animations, and optimal user experience.
 
 ## 🌟 Live Demo
-[View Portfolio]([https://suryanshasati-portfolio.netlify.app/])
+[View Portfolio]([https://portf-folio.netlify.app/])
 
 ## ✨ Features
 
