@@ -635,7 +635,17 @@ footer {
     position: relative;
     color: var(--smoky-black);
     font-size: 1rem;
-    
+    background-color: var(--vegas-gold);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-back);
+    display: inline-block;
+}
+.footer-text:hover {
+    transform: translateY(-2px) rotate(0.5deg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: var(--transition);
 }
 
 /* Mobile Navigation */
