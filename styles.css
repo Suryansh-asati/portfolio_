@@ -35,7 +35,7 @@ html {
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',Monstserrat, sans-serif, monospace;
+    font-family:  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',Monstserrat, sans-serif, monospace;
     line-height: 1.6;
     background-color: var(--section-bg);
     color: var(--text-color);
@@ -87,11 +87,28 @@ body {
     transition: var(--transition-back);
 }
 
+.logo img{
+    align-self: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
+    /* height: 50px; */
+    border-radius: 50%;
+    transition: var(--transition-back);
+}
+
 .logo:hover {
     color: var(--text-color);
-    transform: translateY(-2px) ;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px) rotate(0.5deg);
+    /* border-radius: 50%;
+    box-shadow: 0 4px 8px var(--orange-yellow-crayola); */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     transition: var(--transition);
+}
+
+.logo img:hover{
+    border-radius: 50%;
+    box-shadow: 0 4px 16px var(--orange-yellow-crayola);
 }
 
 .nav-links {
@@ -135,8 +152,9 @@ nav ul li a:hover {
 .resume-btn {
     background-color: var(--primary-color);
     color: var(--orange-yellow-crayola) !important;
+    font-size: 1rem;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: var(--transition-back);
 }
 
@@ -183,6 +201,7 @@ nav ul li a:hover {
     transform: scale(1.05) rotate(0.5deg);
     transition: var(--transition);
     border: 4px solid var(--vegas-gold);
+    box-shadow: 0 4px 10px var(--vegas-gold);
 }
 
 .hidden {
@@ -227,7 +246,8 @@ nav ul li a:hover {
 .about {
 
     padding: 5rem 10%;
-    background-color: var(--section-bg);
+    /* background: url(download.svg); */
+    background-size: cover;
 }
 
 .about h2 {
@@ -277,6 +297,8 @@ nav ul li a:hover {
 .about-text {
     flex: 1;
     text-align: left;
+    color: var(--text-color);
+    font-size: 0.8rem;
 }
 
 .skills {
@@ -416,7 +438,7 @@ nav ul li a:hover {
     background-color: var(--primary-color);
     color: white;
     padding: 0.3rem 0.8rem;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 0.9rem;
 }
 
@@ -583,7 +605,7 @@ nav ul li a:hover {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
@@ -678,7 +700,7 @@ footer {
         padding: 2rem;
         transition: var(--transition);
         /* z-index: -3; */
-        border-radius: 10px 0 0 10px;
+        border-radius: 0px 0 0 10px;
         box-shadow: 0 4px 15px rgba(15, 48, 56, 0.5);
     }
 
@@ -1022,7 +1044,7 @@ section h2, section h3 {
     background-color: var(--primary-color);
     color: var(--background);
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-weight: 500;
     transition: var(--transition);
 }
