@@ -238,7 +238,7 @@ nav ul li a:hover {
     background-color: var(--text-color);
     color: var(--secondary-color);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transform: translateY(-4px) rotate(2deg);
+    transform: translateY(-4px) rotate(0.5deg);
     transition: var(--transition);
 }
 
@@ -396,7 +396,7 @@ nav ul li a:hover {
 }
 
 .project-card:hover {
-    transform: translateY(-10px) rotate(1deg);
+    transform: translateY(-10px) rotate(0.5deg);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
     transition: var(--transition);
 }
@@ -437,6 +437,7 @@ nav ul li a:hover {
     align-items: center;
     justify-content: center;
     opacity: 0;
+    transition: var(--transition-back);
 }
 
 .project-card:hover .project-overlay {
@@ -1290,4 +1291,3 @@ article.active {
   background-color: #ff0000;
   stroke: #fff;
 }
-
