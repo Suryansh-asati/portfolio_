@@ -280,19 +280,19 @@ function exportEmailsToCSV() {
 const faders = document.querySelectorAll('.fade-in');
 
 const appearOptions = {
-  threshold: 0.1
+    threshold: 0.1
 };
 
 const appearOnScroll = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
+    entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
+        entry.target.classList.add('visible');
     } else {
-      entry.target.classList.remove('visible');
+        entry.target.classList.remove('visible');
     }
-  });
+});
 }, appearOptions);
 
 faders.forEach(fader => {
-  appearOnScroll.observe(fader);
+    appearOnScroll.observe(fader);
 });
