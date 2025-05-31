@@ -12,8 +12,7 @@ A modern, responsive portfolio website showcasing my projects, skills, and profe
 - **Interactive UI**: Smooth animations and transitions
 - **Project Showcase**: Detailed project cards with live demos
 - **Skills Display**: Visual representation of technical skills
-- **Newsletter Integration**: Email subscription functionality
-- **Social Media Integration**: Connected with LinkedIn, GitHub, and Instagram
+- **Social Media Integration**: Connected with LinkedIn & GitHub
 
 ## 🛠️ Tech Stack
 
@@ -44,7 +43,7 @@ portfolio/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Suryansh-asati/portfolio_.git
+git clone https://github.com/Suryansh-asati/portfolio_
 ```
 
 2. Navigate to project directory:
