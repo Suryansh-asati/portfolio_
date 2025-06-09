@@ -8,7 +8,6 @@ A modern, responsive portfolio website showcasing my projects, skills, and profe
 ## ✨ Features
 
 - **Responsive Design**: Seamlessly adapts to all screen sizes
-- **Dark/Light Theme**: Color scheme that matches your brand
 - **Interactive UI**: Smooth animations and transitions
 - **Project Showcase**: Detailed project cards with live demos
 - **Skills Display**: Visual representation of technical skills
