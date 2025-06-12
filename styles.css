@@ -64,7 +64,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: var(--secondary-color) ;
+    background-color: var(--secondary-color)  ;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
