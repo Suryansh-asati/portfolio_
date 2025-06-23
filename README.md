@@ -3,7 +3,7 @@
 A modern, responsive portfolio website showcasing my projects, skills, and professional journey. Built with a focus on clean design, smooth animations, and optimal user experience.
 
 ## 🌟 Live Demo
-**View Portfolio**- https://portf-folio.netlify.app/
+*[**View Here**](https://suryanshasati.netlify.app/)- https://suryanshasati.netlify.app/*
 
 ## ✨ Features
 
@@ -22,21 +22,6 @@ A modern, responsive portfolio website showcasing my projects, skills, and profe
 - Font Awesome Icons
 - Google Fonts
 
-## 📂 Project Structure
-
-```
-portfolio/
-│
-├── index.html          # Main HTML file
-├── styles.css          # Styling
-├── script.js          # JavaScript functionality
-├── assets/            # Images and resources
-│   ├── pfp.jpg       # Profile picture
-│   ├── project1.png  # Project screenshots
-│   └── project2.jpg
-│
-└── README.md          # Documentation
-```
 
 ## 🚀 Getting Started
 
@@ -116,4 +101,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 Made with ❤️ by Suryansh Asati
-```
+
