@@ -79,6 +79,10 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
+.navbar.scrolled a{
+    color: var(--orange-yellow-crayola);
+}
+
 .logo {
     font-size: 1em;
     font-weight: 700;
