@@ -301,11 +301,11 @@
         var scroll = document.getElementById('main');
         function myloadfunction(){
             loader.style.display='none';
-            scroll.style.overflow='hidden';
+            scroll.style.overflow='scroll';
         }
 
         window.addEventListener('load', () => {
-            const loader = document.getElementById('preloader');
+            const loader = document.getElementById('load');
             loader.style.display = 'none'; // hides the preloader when page is fully loaded
         });
 
