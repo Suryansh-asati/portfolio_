@@ -1,4 +1,3 @@
-/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
@@ -19,12 +18,16 @@
     --eerie-black-2: #1f1f21;       
     --smoky-black: #121212;         
     --orange-yellow-crayola: #ffe169;
-    --vegas-gold: #c9b458;    
     --border-gradient-onyx: linear-gradient(135deg,  #32166a , #78c1e3);
     --color-gradient-navlink: linear-gradient(135deg,  #2368a9 , #78c1e3, #32166a);
     --big-ol-gradient: radial-gradient(circle at 10% 90%, #32166a 0%, transparent 40%),
     radial-gradient(circle at 90% 95%, #f000ff 0%, transparent 40%),
-    radial-gradient(circle at 50% 8%, #78c1e3 0%, transparent 40%),
+    radial-gradient(circle at 50% 1%, #78c1e3 0%, transparent 32%),
+    #0a0a2a;
+    --big-ol-gradient-2: radial-gradient(circle at 10% 90%, #32166a 0%, transparent 90%),
+    radial-gradient(circle at 90% 95%, #f000ff 0%, transparent 90%),
+    radial-gradient(circle at 50% 1%, #78c1e3 0%, transparent 90%),
+    radial-gradient(circle at 50% 95%, #ffe169 0%, transparent 90%),
     #0a0a2a;
     --shadow-1: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-2: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -41,9 +44,66 @@ html {
 body {
     font-family:  'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',Monstserrat, sans-serif, monospace;
     line-height: 1.6;
-    background: var(--big-ol-gradient) 45% 50% / cover no-repeat;
+    /* background: var(--big-ol-gradient) 45% 50% / cover no-repeat; */
     color: var(--text-color);
 }
+
+/* Loader */
+/* From Uiverse.io by JaydipPrajapati1910 */ 
+.loader {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  border: 4px solid #282828;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.1),
+    10px 10px 10px rgba(0, 0, 0, 0.4),
+    inset -5px -5px 5px rgba(255, 255, 255, 0.2),
+    inset 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.loader:before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  right: 25px;
+  bottom: 25px;
+  z-index: 10;
+  background: #212121;
+  border-radius: 50%;
+  border: 2px solid #292929;
+  box-shadow: inset -2px -2px 5px rgba(255, 255, 255, 0.2),
+    inset 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.loader span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    -225deg,
+    #ff7402 0%,
+    #ffe700 50%,
+    #fff55e 100%
+  );
+  filter: blur(20px);
+  z-index: -1;
+  animation: animate 0.5s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+    transform: rotate(0deg);
+    }
+
+    100% {
+    transform: rotate(360deg);
+    }
+}
+
 
 /* Fade-in Animation */
 .fade-in {
@@ -65,6 +125,12 @@ body {
     background-position: center;
 }
 
+.big-ol-gradient-2 {
+    background: var(--big-ol-gradient-2);
+    background-size: cover;
+    background-position: center;
+}
+
 .transition{
     transition: var(--transition);
 }
@@ -81,7 +147,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.6rem 5%;
+    padding: 1em 5%;
     /* background: var(--big-ol-gradient); */
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
@@ -92,7 +158,7 @@ body {
 
 
 .navbar.scrolled {
-    padding: 0.2rem 5%;
+    padding: 0.6rem 5%;
     /* background-color: var(--text-card-color); */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
@@ -102,6 +168,8 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
     font-size: 1em;
     font-weight: 700;
     color: var(--primary-color);
@@ -110,9 +178,9 @@ body {
 }
 
 .logo img{
-    align-self: center;
+    /* align-self: center; */
     width: 2.5rem;
-    height: 2.5rem;
+    /* height: 2.5rem; */
     border-radius: 50%;
     transition: var(--transition-back);
 }
@@ -125,7 +193,7 @@ body {
 
 .logo img:hover{
     border-radius: 50%;
-    box-shadow: 0 4px 16px var(--orange-yellow-crayola);
+    box-shadow: 0 4px 12px var(--orange-yellow-crayola);
 }
 
 .nav-links {
@@ -183,6 +251,8 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
+    top: 0;
+    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -217,8 +287,8 @@ nav ul li a:hover {
 .profile-picture:hover{
     transform: scale(1.05) rotate(0.5deg);
     transition: var(--transition);
-    border: 4px solid var(--vegas-gold);
-    box-shadow: 0 4px 10px var(--vegas-gold);
+    border: 4px solid var(--orange-yellow-crayola);
+    box-shadow: 0 4px 10px var(--orange-yellow-crayola);
 }
 
 .hidden {
@@ -243,7 +313,7 @@ nav ul li a:hover {
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    background-color: var(--primary-color);
+    background: var(--big-ol-gradient-2);
     color: var(--background);
     text-decoration: none;
     border-radius: 5px;
@@ -626,7 +696,7 @@ footer {
     position: relative;
     color: var(--smoky-black);
     font-size: 1rem;
-    background-color: var(--vegas-gold);
+    background-color: var(--orange-yellow-crayola);
     padding: 0.6rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -792,7 +862,7 @@ footer {
 }
 
 .hero p {
-    color: var(--vegas-gold);
+    color: var(--orange-yellow-crayola);
 }
 
 section {
@@ -800,18 +870,19 @@ section {
 }
 
 .btn {
-    background-color: var(--primary-color);
-    color: white;
+    /* background-color: var(--primary-color); */
+    /* color: white; */
+    border: 2px solid var(--smoky-black);
 }
 
 .btn:hover {
-    background-color: var(--secondary-color);
+    /* background-color: var(--secondary-color); */
     color: var(--light-text);
 }
 
 
 a {
-    color: var(--primary-color);
+    color: var(--orange-yellow-crayola);
     text-decoration: none;
     transition: var(--transition);
 } 
@@ -900,7 +971,7 @@ a:hover {
     align-self: center;
 }
 .timeline-list span {
-    color: var(--vegas-gold);
+    color: var(--orange-yellow-crayola);
     line-height: 1.6;
 }
 
@@ -912,7 +983,7 @@ a:hover {
     margin-left: 0;
     width: 1px;
     height: calc(100% + 50px);
-    background: var(--vegas-gold);
+    background: var(--orange-yellow-crayola);
     align-items: center;
     display: flex;
     justify-content: center;
