@@ -296,3 +296,15 @@ const appearOnScroll = new IntersectionObserver((entries) => {
 faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
+
+var loader = document.getElementById('load');
+var scroll = document.getElementById('main');
+function myloadfunction(){
+    loader.style.display='none';
+    scroll.style.overflow='hidden';
+}
+
+window.addEventListener('load', () => {
+    const loader = document.getElementById('preloader');
+    loader.style.display = 'none'; // hides the preloader when page is fully loaded
+});
