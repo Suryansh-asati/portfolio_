@@ -55,7 +55,7 @@ body {
   width: 160px;
   height: 160px;
   border: 4px solid #282828;
-  overflow: hidden;
+  overflow: scroll;
   border-radius: 50%;
   box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.1),
     10px 10px 10px rgba(0, 0, 0, 0.4),
