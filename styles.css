@@ -261,7 +261,7 @@ nav ul li a:hover {
     text-align: center;
     padding: 6rem 1rem;
     /* background: var(--border-gradient-onyx); */
-    background: var(--big-ol-gradient);
+    background: var(--big-ol-gradient-2);
 }
 
 .hero-content {
@@ -329,7 +329,7 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-    background: var(--text-color) !important;
+    background: var(--text-color) ;
     color: var(--secondary-color) !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: translateY(-4px) rotate(0.5deg);
@@ -345,8 +345,8 @@ nav ul li a:hover {
 
 .about h2 {
     text-align: center;
-    margin-bottom: 3rem;
-    color: var(--text-color);
+    margin-bottom: 2rem;
+    color: var(--primary-color);
     font-size: 2.5rem;
     font-weight: 700;
 }
@@ -436,7 +436,7 @@ nav ul li a:hover {
     justify-content: center;
     gap: 0.5rem;
     padding: 1.5rem;
-    background: var(--border-gradient-onyx);
+    background: var(--big-ol-gradient-2);
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: var(--transition-back);
@@ -645,7 +645,7 @@ nav ul li a:hover {
     gap: 0.5rem;
     width: 100%;
     padding: 1rem;
-    background-color: var(--primary-color);
+    background: var(--big-ol-gradient-2);
     color: white;
     border: none;
     border-radius: 10px;
@@ -656,8 +656,8 @@ nav ul li a:hover {
 }
 
 .submit-button:hover {
-    background-color: var(--text-color);
-    color: var(--secondary-color);
+    background-color: var(--text-color) !important;
+    color: var(--secondary-color) !important;
     transform: translateY(-2px) rotate(0.5deg);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
@@ -693,7 +693,7 @@ footer {
     text-align: center;
     padding: 2rem;
     /* background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 70%); */
-    background: var(--big-ol-gradient);
+    background: var(--big-ol-gradient-2);
     /* color: white; */
     height: auto;
 }
@@ -738,8 +738,8 @@ footer {
         position: absolute;
         right: -100%;
         top: 100%;
-        height: calc(100vh - 100px );
-        background: var(--big-ol-gradient);
+        /* height: calc(100vh - 100px ); */
+        background: var(--big-ol-gradient-2);
         opacity: 0.959;
         -webkit-backdrop-filter: blur(10px);
         backdrop-filter: blur(10px);
@@ -926,7 +926,7 @@ a:hover {
     align-items: center;
     gap: 0.5rem;
     padding: 1rem 2rem;
-    background-color: var(--primary-color);
+    background: var(--big-ol-gradient-2);
     color: var(--background);
     text-decoration: none;
     border-radius: 10px;
@@ -935,7 +935,7 @@ a:hover {
 }
 
 .resume-download-btn:hover {
-    background-color: var(--text-color);
+    background: var(--text-color) !important;
     color: var(--secondary-color);
     transform: translateY(-2px) rotate(0.5deg);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
