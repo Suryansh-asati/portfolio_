@@ -23,7 +23,7 @@
     --big-ol-gradient: radial-gradient(circle at 10% 90%, #32166a 0%, transparent 40%),
     radial-gradient(circle at 90% 95%, #f000ff 0%, transparent 40%),
     radial-gradient(circle at 50% 1%, #78c1e3 0%, transparent 32%),
-    #0a0a2a;
+    #0a0a2a ;
     --big-ol-gradient-2: radial-gradient(circle at 10% 90%, #32166a 0%, transparent 90%),
     radial-gradient(circle at 90% 95%, #f000ff 0%, transparent 90%),
     radial-gradient(circle at 50% 1%, #78c1e3 0%, transparent 90%),
@@ -199,11 +199,12 @@ body {
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .nav-links a {
     text-decoration: none;
+    font-size: 0.8rem;
     color: var(--orange-yellow-crayola);
     font-weight: 500;
     transition: var(--transition-back);
@@ -217,7 +218,7 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: var(--orange-yellow-crayola);
     transition: var(--transition);
 }
 
@@ -230,7 +231,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: var(--text-color);
+    color: var(--orange-yellow-crayola) !important;
 }
 
 .resume-btn {
@@ -291,6 +292,12 @@ nav ul li a:hover {
     box-shadow: 0 4px 10px var(--orange-yellow-crayola);
 }
 
+.tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -50px;
+}
+
 .hidden {
     display: none;
 }
@@ -322,8 +329,8 @@ nav ul li a:hover {
 }
 
 .cta-button:hover {
-    background-color: var(--text-color);
-    color: var(--secondary-color);
+    background: var(--text-color) !important;
+    color: var(--secondary-color) !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: translateY(-4px) rotate(0.5deg);
     transition: var(--transition);
@@ -331,7 +338,6 @@ nav ul li a:hover {
 
 /* About Section */
 .about {
-
     padding: 5rem 10%;
     /* background: url(download.svg); */
     background-size: cover;
