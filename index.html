@@ -10,8 +10,11 @@
         <link rel="stylesheet" href="https://geist.vercel.app/font.css" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
-    <body class="big-ol-gradient-2">
-        <nav class="navbar big-ol-gradient fade-in">
+    <body class="big-ol-gradient-2" onload="myloadfunction()" id ="main">
+        <div class="loader" id="load">
+            <span></span>
+        </div>
+        <nav class="navbar big-ol-gradient">
             <div class="logo"><a href="index.html">
                 <!-- <img src="/assets/sa-favicon.svg" alt="Suryansh's Portfolio"> -->
                 <p>Portfolio</p>
@@ -32,7 +35,7 @@
         </nav>    
         <section id="home" class="hero fade-in">
             <div class="hero-content">
-                <div class="profile-upload">
+                <div class="profile-upload ">
                     <img src="/assets/pfp.jpg" alt="Profile Picture" id="profile-preview" class="profile-picture">
                 </div>
                 <h1>Hello, this is Suryansh</h1>
@@ -293,4 +296,18 @@
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="script.js"></script>
     </body>
+    <script>
+        var loader = document.getElementById('load');
+        var scroll = document.getElementById('main');
+        function myloadfunction(){
+            loader.style.display='none';
+            scroll.style.overflow='hidden';
+        }
+
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('preloader');
+            loader.style.display = 'none'; // hides the preloader when page is fully loaded
+        });
+
+    </script>
 </html>
