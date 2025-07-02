@@ -305,8 +305,29 @@ nav ul li a:hover {
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    color: var(--orange-yellow-crayola);
+    /* color: var(--orange-yellow-crayola); */
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(90deg, #7182ff 0%, #3cff52 25%, #7182ff 50%, #3cff52 75%, #7182ff 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: textshine 3s ease-in-out infinite alternate;
     font-weight: 700;
+}
+
+@keyframes textshine {
+    0% {
+        background-position: 0 50%;
+    }
+    15% {
+        background-position: 0 50%;
+    }
+    85% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 .hero-content p {
