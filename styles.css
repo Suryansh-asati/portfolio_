@@ -51,16 +51,32 @@ body {
 /* Loader */
 /* From Uiverse.io by JaydipPrajapati1910 */ 
 .loader {
-    position: relative;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 160px;
     height: 160px;
     border: 4px solid #282828;
-  /* overflow: scroll; */
     border-radius: 50%;
+    z-index: 9999;
+    background: var(--big-ol-gradient-2);
     box-shadow: -5px -5px 5px rgba(255, 255, 255, 0.1),
     10px 10px 10px rgba(0, 0, 0, 0.4),
     inset -5px -5px 5px rgba(255, 255, 255, 0.2),
     inset 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Loader overlay to cover entire screen */
+.loader::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--big-ol-gradient-2);
+    z-index: -1;
 }
 
 .loader:before {
@@ -1237,4 +1253,19 @@ article.active {
 .example-2 .icon-content a[data-social="email"] .filled,
 .example-2 .icon-content a[data-social="email"] ~ .tooltip {
     background: linear-gradient( 45deg, #4caf50, #1e88e5, #e53935, #c62828, #fbc02d );
+}
+
+/* Hide main content while loading */
+body.loading {
+    overflow: hidden;
+}
+
+body.loading > *:not(.loader) {
+    display: none;
+}
+
+/* Smooth transition when loader disappears */
+.loader.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
