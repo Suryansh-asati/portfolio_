@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://geist.vercel.app/font.css" />
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     </head>
-    <body class="big-ol-gradient-2" onload="myloadfunction()" id ="main">
+    <body class="big-ol-gradient-2 loading" id="main">
         <div class="loader" id="load">
             <span></span>
         </div>
@@ -36,7 +36,7 @@
         <section id="home" class="hero fade-in">
             <div class="hero-content">
                 <div class="profile-upload ">
-                    <img src="/assets/pfp.jpg" alt="Profile Picture" id="profile-preview" class="profile-picture">
+                    <img src="/assets/pfp.jpg" alt="Profile Picture" id="profile-preview" class="profile-picture" loading="lazy">
                 </div>
                 <h1 class="textshine-animation">Hello, this is Suryansh</h1>
                 <p class="textshine-animation">I'm a passionate developer creating amazing digital experiences</p>
@@ -297,17 +297,19 @@
         <script src="script.js"></script>
     </body>
     <script>
-        var loader = document.getElementById('load');
-        var scroll = document.getElementById('main');
-        function myloadfunction(){
-            loader.style.display='none';
-            scroll.style.overflow='scroll';
-        }
-
+        // Preloader functionality
         window.addEventListener('load', () => {
             const loader = document.getElementById('load');
-            loader.style.display = 'none'; // hides the preloader when page is fully loaded
+            const body = document.body;
+            
+            // Add fade-out animation to loader
+            loader.classList.add('fade-out');
+            
+            // Wait for fade-out animation to complete before hiding loader
+            setTimeout(() => {
+                loader.style.display = 'none';
+                body.classList.remove('loading');
+            }, 500);
         });
-
     </script>
 </html>
