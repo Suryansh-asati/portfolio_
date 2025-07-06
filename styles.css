@@ -29,6 +29,7 @@
     radial-gradient(circle at 50% 1%, #78c1e3 0%, transparent 90%),
     radial-gradient(circle at 50% 95%, #ffe169 0%, transparent 90%),
     #0a0a2a;
+    --bluegreen-gradient: linear-gradient(90deg, #7182ff 0%, #3cff52 25%, #7182ff 50%, #3cff52 75%, #7182ff 100%);
     --shadow-1: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-2: 0 6px 12px rgba(0, 0, 0, 0.1);
     --shadow-3: 0 8px 16px rgba(0, 0, 0, 0.1);
