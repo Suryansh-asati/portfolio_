@@ -270,7 +270,7 @@ nav ul li a:hover {
 .hero {
     top: 0;
     position: relative;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -292,6 +292,7 @@ nav ul li a:hover {
 }
 
 .profile-picture {
+    position: relative;
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -301,15 +302,15 @@ nav ul li a:hover {
     transition: var(--transition-back);
 }
 
-.profile-picture:hover{
+/* .profile-picture:hover{
     transform: scale(1.05) rotate(0.5deg);
     transition: var(--transition);
     border: 4px solid var(--orange-yellow-crayola);
     box-shadow: 0 4px 10px var(--orange-yellow-crayola);
-}
+} */
 
 .profile-overlay{
-    /* position: absolute; */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -322,54 +323,41 @@ nav ul li a:hover {
     z-index: 9999;
 }
 
-.p01, .po2 {
-    position: relative;
-    font-size: 2rem;
-    top: -100%;
-    left:0;
-    width: 3rem;
-    height: 3rem;
-    background: var(--orange-yellow-crayola);
-    border-radius: 100%;
+.profile-overlay ul{
+    list-style: none;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* gap: 1rem; */
 }
 
-.p01:hover, .po2:hover {
-    background: var(--text-color);
-    color: var(--secondary-color) !important;
-    transform: translateY(-2px) rotate(0.5deg);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: var(--transition);
-}
-
-.p01 .tooltip, .po2 .tooltip {
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    padding: 6px 10px;
-    border-radius: 5px;
-    opacity: 0;
-    visibility: hidden;
-    font-size: 14px;
-    transition: var(--transition);
+.profile-overlay ul li {
+    margin: 0 0.5rem;
 }
 
 .p01{
-    left: 7rem;
+    top: 4rem;
+    left: 0;
 }
 
-.po2{
-    left: -7rem;
+.p02{
+    top: 7rem;
+    left: -0.5rem;
 }
 
-.p01:hover .tooltip, .po2:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-    top: -2rem;
+.p03{
+    top: 7rem;
+    left: 0.5rem;
+}
+
+.p04{
+    top: 4rem;
+    left: 0;
+}
+
+.profile-picture:hover{
+    transform: scale(1.05) rotate(0.5deg);
+    transition: var(--transition);
+    border: 4px solid var(--orange-yellow-crayola);
+    box-shadow: 0 4px 10px var(--orange-yellow-crayola);
 }
 
 .tooltip {
