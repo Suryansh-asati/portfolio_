@@ -297,6 +297,7 @@ faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
 
+//preloader
 var loader = document.getElementById('load');
 var scroll = document.getElementById('main');
 function myloadfunction(){
