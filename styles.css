@@ -522,7 +522,7 @@ nav ul li a:hover {
 
 .skill-item {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
