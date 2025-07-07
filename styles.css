@@ -145,7 +145,7 @@ body {
 }
 
 .big-ol-gradient-2 {
-    background: linear-gradient(135deg, black, grey);
+    background: linear-gradient(135deg, black, grey, black);
     background-size: cover;
     background-position: center;
 }
@@ -270,13 +270,18 @@ nav ul li a:hover {
     top: 0;
     position: relative;
     /* min-height: 100vh; */
+    height: 800px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     padding: 6rem 1rem;
     /* background: var(--border-gradient-onyx); */
-    background: var(--big-ol-gradient-2);
+    /* background: var(--big-ol-gradient-2); */
+}
+
+.image-bg{
+    background: url(assets/hero-bg.png) no-repeat center center/cover;
 }
 
 .hero-content {
@@ -769,7 +774,7 @@ footer {
     text-align: center;
     padding: 2rem;
     /* background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 70%); */
-    background: var(--big-ol-gradient-2);
+    /* background: var(--big-ol-gradient-2); */
     /* color: white; */
     height: auto;
 }
@@ -1194,7 +1199,7 @@ article.active {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
-    margin: 5%;
+    margin: 50px;
 }
 
 .social-links-2 ul {
