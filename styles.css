@@ -281,7 +281,8 @@ nav ul li a:hover {
 }
 
 .image-bg{
-    background: url(assets/hero-bg.png) no-repeat center center/cover;
+    /* background: url(assets/hero-bg.png) no-repeat center center/cover; */
+    background: linear-gradient(135deg, black, grey, black) ;
 }
 
 .hero-content {
@@ -413,10 +414,11 @@ nav ul li a:hover {
 
 .cta-button {
     padding: 1rem 2rem;
+    top: 1px;
     background: var(--background);
     color: var(--smoky-black);
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-weight: 500;
     transition: var(--transition-back)
 }
@@ -460,7 +462,7 @@ nav ul li a:hover {
     height: auto;
     width: auto;
     flex: 1;
-    border-radius: 10px;
+    border-radius: 50%;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: var(--transition-back);
@@ -729,7 +731,7 @@ nav ul li a:hover {
     justify-content: center;
     gap: 0.5rem;
     width: 100%;
-    padding: 1rem;
+    /* padding: 1rem; */
     color: var(--smoky-black);
     background: white;
     /* border: none; */
@@ -740,9 +742,24 @@ nav ul li a:hover {
     transition: var(--transition-back);
 }
 
-.submit-button:hover {
-    background: var(--primary-color) !important;
-    color: var(--smoky-black) !important;
+.submitbtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: relative;
+    top: 1px;
+    background-color: var(--background);
+    width: 100%;
+    /* height: 100%; */
+    padding: 1rem;
+    border-radius: 10px;
+    transition: var(--transition-back);
+}
+
+.submitbtn:hover {
+    background: var(--smoky-black) !important;
+    color: var(--background) !important;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
 }
@@ -1007,7 +1024,7 @@ a:hover {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 2rem;
+    padding: 1rem;
     background: var(--background);
     color: var(--smoky-black);
     text-decoration: none;
@@ -1392,5 +1409,5 @@ body.loading > *:not(.loader) {
 }
 
 .card:after {
-    filter: blur(50px);
+    filter: blur(10px);
 }
