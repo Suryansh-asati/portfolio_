@@ -51,6 +51,20 @@ body {
     color: var(--text-color);
 }
 
+#cursor-indicator {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background-color: var(--orange-yellow-crayola);
+    border-radius: 50%;
+    pointer-events: none; /* Allows clicks through the element */
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform 0.1s ease;
+    box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+
 /* Loader */
 /* From Uiverse.io by JaydipPrajapati1910 */ 
 .loader {
@@ -430,6 +444,9 @@ nav ul li a:hover {
 
 /* About Section */
 .about {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
     padding: 5rem 10%;
     background-size: cover;
 }
@@ -1496,6 +1513,7 @@ opacity: 0.8;
     justify-content: center;
     align-items: center;
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 0;
     /* background: #121212;  */

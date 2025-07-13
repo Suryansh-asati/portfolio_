@@ -297,29 +297,28 @@ faders.forEach(fader => {
     appearOnScroll.observe(fader);
 });
 
-//preloader
-var loader = document.getElementById('load');
-var scroll = document.getElementById('main');
-function myloadfunction(){
-    loader.style.display='none';
-    scroll.style.overflow='hidden';
-}
-
-window.addEventListener('load', () => {
-    const loader = document.getElementById('preloader');
-    loader.style.display = 'none'; // hides the preloader when page is fully loaded
+// Mouse cursor tracking
+document.addEventListener('DOMContentLoaded', () => {
+    const indicator = document.getElementById('cursor-indicator');
+    
+    if (indicator) {
+        document.addEventListener('mousemove', (e) => {
+            // Use requestAnimationFrame for smooth animation
+            requestAnimationFrame(() => {
+                indicator.style.left = `${e.clientX}px`;
+                indicator.style.top = `${e.clientY}px`;
+            });
+        });
+        
+        // Hide cursor indicator when mouse leaves the window
+        document.addEventListener('mouseleave', () => {
+            indicator.style.opacity = '0';
+        });
+        
+        // Show cursor indicator when mouse enters the window
+        document.addEventListener('mouseenter', () => {
+            indicator.style.opacity = '1';
+        });
+    }
 });
 
-
-const text = "Welcome to my povbfrgs tfrsgtfrtshtrsag reg regfe sgreasgtegsre gr egareaght eagte agwrte gtyhgrtfolio!";
-let index = 0;
-
-function type() {
-  if (index < text.length) {
-    document.getElementById("typed-text").innerHTML += text.charAt(index);
-    index++;
-    setTimeout(type, 100); // typing speed (ms)
-  }
-}
-
-window.onload = type;
