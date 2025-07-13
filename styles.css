@@ -509,7 +509,7 @@ nav ul li a:hover {
 .skills h3 {
     text-align: center;
     margin-bottom: 2rem;
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
     color: var(--background);
 }
 
@@ -789,6 +789,8 @@ footer {
     position: relative;
     text-align: center;
     padding: 2rem;
+    bottom: 0;
+    left: 0;
     /* background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 70%); */
     /* background: var(--big-ol-gradient-2); */
     /* color: white; */
@@ -818,10 +820,18 @@ footer {
     cursor: pointer;
 }
 
+.line1, .line2, .line3 {
+    width: 30px;
+    height: 3px;
+    background-color: var(--orange-yellow-crayola);
+    margin: 5px;
+    transition: var(--transition);
+}
+
 .burger div {
     width: 25px;
     height: 3px;
-    background-color: var(--text-color);
+    /* background-color: var(--text-color); */
     margin: 5px;
     transition: var(--transition);
 }
@@ -860,6 +870,8 @@ footer {
 
     .burger {
         display: block;
+        position: absolute;
+        right: 20px;
     }
 
     .burger.toggle div:nth-child(1) {
@@ -915,7 +927,7 @@ footer {
     text-align:center ;
 }
 .below-form h3{
-    font-size: 1rem;
+    /* font-size: 1rem; */
     color: var(--background);
     margin-bottom: 0rem ;
 }
@@ -973,6 +985,13 @@ section {
     padding: 4rem 2rem;
 }
 
+.section-title{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: var(--background);
+}
+
 .btn {
     /* background-color: var(--primary-color); */
     /* color: white; */
@@ -1011,7 +1030,7 @@ a:hover {
 
 .resume-section h2 {
     color: var(--background);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .resume-section p {
@@ -1361,7 +1380,7 @@ body.loading > *:not(.loader) {
     border: none;
     /* color: white; */
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
     transition-duration: .2s;
     /* background: var(--background); */
     transition: var(--transition);
@@ -1411,107 +1430,139 @@ body.loading > *:not(.loader) {
     filter: blur(10px);
 }
 
+.container-2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    --u: 5px;
+    --c1: #ededee;
+    --c2: #000000;
+    --c3: #1e1e1e;
+    --gp: 50% / calc(var(--u) * 16.9) calc(var(--u) * 12.8);
+    background: conic-gradient(
+        from 122deg at 50% 85.15%,
+        var(--c2) 0 58deg,
+        var(--c3) 0 116deg,
+        #fff0 0 100%
+        )
+        var(--gp),
+    conic-gradient(from 122deg at 50% 72.5%, var(--c1) 0 116deg, #fff0 0 100%)
+        var(--gp),
+    conic-gradient(from 58deg at 82.85% 50%, var(--c3) 0 64deg, #fff0 0 100%)
+        var(--gp),
+    conic-gradient(
+        from 58deg at 66.87% 50%,
+        var(--c1) 0 64deg,
+        var(--c2) 0 130deg,
+        #fff0 0 100%
+        )
+        var(--gp),
+    conic-gradient(from 238deg at 17.15% 50%, var(--c2) 0 64deg, #fff0 0 100%)
+        var(--gp),
+    conic-gradient(
+        from 172deg at 33.13% 50%,
+        var(--c3) 0 66deg,
+        var(--c1) 0 130deg,
+        #fff0 0 100%
+        )
+        var(--gp),
+    linear-gradient(98deg, var(--c3) 0 15%, #fff0 calc(15% + 1px) 100%)
+        var(--gp),
+    linear-gradient(-98deg, var(--c2) 0 15%, #fff0 calc(15% + 1px) 100%)
+        var(--gp),
+    conic-gradient(
+        from -58deg at 50.25% 14.85%,
+        var(--c3) 0 58deg,
+        var(--c2) 0 116deg,
+        #fff0 0 100%
+        )
+        var(--gp),
+    conic-gradient(from -58deg at 50% 28.125%, var(--c1) 0 116deg, #fff0 0 100%)
+        var(--gp),
+    linear-gradient(90deg, var(--c2) 0 50%, var(--c3) 0 100%) var(--gp);
+    /* filter: blur(5px); */
+    animation: move 4s linear infinite;
+opacity: 0.8;
+}
+
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* background: #121212;  */
+    background: linear-gradient(
+        135deg,
+        #121212 25%,
+        #1a1a1a 25%,
+        #1a1a1a 50%,
+        #121212 50%,
+        #121212 75%,
+        #1a1a1a 75%,
+        #1a1a1a
+    );
+    background-size: 40px 40px;
+    animation: move 2s linear infinite;
+}
+
+@keyframes move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 40px 40px;
+    }
+}
 
 .container-bg {
     position: fixed;
-    inset: 0;
-    filter: blur(2px);
-}
-
-.container-bg::before {
-    content: "";
-    position: absolute;
-    inset: -145%;
-    rotate: -45deg;
-    background: #000000;
-    background-image: radial-gradient(
-        4px 100px at 0px 235px,
-        rgb(255, 140, 17),
-        #0000
-        ),
-        radial-gradient(4px 100px at 300px 235px, rgb(255, 119, 0), #884e2800),
-        radial-gradient(
-        1.5px 1.5px at 150px 117.5px,
-        rgb(255, 144, 9) 100%,
-        #0000 150%
-        ),
-        radial-gradient(4px 100px at 0px 252px, rgb(156, 14, 137), #0000),
-        radial-gradient(4px 100px at 300px 252px, rgb(23, 41, 206), #0000),
-        radial-gradient(
-        1.5px 1.5px at 150px 126px,
-        rgb(247, 102, 18) 100%,
-        #0000 150%
-        ),
-        radial-gradient(4px 100px at 0px 150px, rgb(249, 121, 16), #0000),
-        radial-gradient(4px 100px at 300px 150px, rgb(255, 128, 18), #0000),
-        radial-gradient(
-        1.5px 1.5px at 150px 75px,
-        rgb(255, 116, 10) 100%,
-        #0000 150%
-        ),
-        radial-gradient(4px 100px at 0px 253px, rgb(249, 137, 17), #0000),
-        radial-gradient(4px 100px at 300px 253px, rgb(248, 107, 14), #0000),
-        radial-gradient(
-        1.5px 1.5px at 150px 126.5px,
-        rgb(252, 129, 14) 100%,
-        #0000 150%
-        ),
-        radial-gradient(4px 100px at 0px 204px, rgb(234, 115, 18), #0000),
-        radial-gradient(4px 100px at 300px 204px, rgb(255, 139, 6), #0000),
-        radial-gradient(
-        1.5px 1.5px at 150px 102px,
-        rgb(255, 128, 9) 100%,
-        #0000 150%
-        ),
-        radial-gradient(4px 100px at 0px 134px, rgb(249, 133, 9), #0000),
-        radial-gradient(4px 100px at 300px 134px, rgb(251, 125, 15), #0000),
-        radial-gradient(
-        1.5px 1.5px at 150px 67px,
-        rgb(255, 146, 13) 100%,
-        #0000 150%
-        ),
-        radial-gradient(4px 100px at 0px 179px, rgb(249, 137, 17), #0000),
-        radial-gradient(4px 100px at 300px 179px, rgb(253, 122, 6), #0000),
-        radial-gradient(
-        1.5px 1.5px at 150px 89.5px,
-        rgb(234, 132, 7) 100%,
-        #0000 150%
-        ),
-        radial-gradient(4px 100px at 0px 299px, rgb(255, 115, 0), #0000),
-        radial-gradient(4px 100px at 300px 299px, rgb(255, 136, 0), #0000),
-        radial-gradient(
-        1.5px 1.5px at 150px 149.5px,
-        rgb(255, 123, 0) 100%,
-        #0000 150%
-        ),
-        radial-gradient(4px 100px at 0px 215px, rgb(255, 145, 0), #0000),
-        radial-gradient(4px 100px at 300px 215px, rgb(255, 132, 0), #0000),
-        radial-gradient(
-        1.5px 1.5px at 150px 107.5px,
-        rgb(255, 136, 0) 100%,
-        #0000 150%
-        ),
-        radial-gradient(4px 100px at 0px 281px, rgb(255, 170, 0), #0000),
-        radial-gradient(4px 100px at 300px 281px, rgb(255, 115, 0), #0000),
-        radial-gradient(
-        1.5px 1.5px at 150px 140.5px,
-        rgb(255, 119, 0) 100%,
-        #0000 150%
-        ),
-        radial-gradient(4px 100px at 0px 158px, rgb(255, 123, 0), #0000),
-        radial-gradient(4px 100px at 300px 158px, rgb(255, 132, 0), #0000),
-        radial-gradient(
-        1.5px 1.5px at 150px 79px,
-        rgb(255, 149, 0) 100%,
-        #0000 150%
-        ),
-        radial-gradient(4px 100px at 0px 210px, rgb(255, 123, 0), #0000),
-        radial-gradient(4px 100px at 300px 210px, rgb(255, 162, 0), #0000),
-        radial-gradient(
-        1.5px 1.5px at 150px 105px,
-        rgb(255, 136, 0) 100%,
-        #0000 150%
-        );
+    width: 100%;
+    height: 100%;
+    background: #141414;
+    --color1: var(--orange-yellow-crayola);
+    background-image: radial-gradient(4px 100px at 0px 235px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 235px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 117.5px, var(--color1) 100%, #0000 150%),
+        radial-gradient(4px 100px at 0px 252px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 252px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 126px, var(--color1) 100%, #0000 150%),
+        radial-gradient(4px 100px at 0px 150px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 150px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 75px, var(--color1) 100%, #0000 150%),
+        radial-gradient(4px 100px at 0px 253px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 253px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 126.5px, var(--color1) 100%, #0000 150%),
+        radial-gradient(4px 100px at 0px 204px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 204px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 102px, var(--color1) 100%, #0000 150%),
+        radial-gradient(4px 100px at 0px 134px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 134px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 67px, var(--color1) 100%, #0000 150%),
+        radial-gradient(4px 100px at 0px 179px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 179px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 89.5px, var(--color1) 100%, #0000 150%),
+        radial-gradient(4px 100px at 0px 299px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 299px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 149.5px, var(--color1) 100%, #0000 150%),
+        radial-gradient(4px 100px at 0px 215px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 215px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 107.5px, var(--color1) 100%, #0000 150%),
+        radial-gradient(4px 100px at 0px 281px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 281px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 140.5px, var(--color1) 100%, #0000 150%),
+        radial-gradient(4px 100px at 0px 158px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 158px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 79px, var(--color1) 100%, #0000 150%),
+        radial-gradient(4px 100px at 0px 210px, var(--color1), #0000),
+        radial-gradient(4px 100px at 300px 210px, var(--color1), #0000),
+        radial-gradient(1.5px 1.5px at 150px 105px, var(--color1) 100%, #0000 150%);
     background-size:
         300px 235px,
         300px 235px,
@@ -1633,93 +1684,6 @@ body.loading > *:not(.loader) {
     }
 }
 
-.container-2 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    --u: 5px;
-    --c1: #ededee;
-    --c2: #000000;
-    --c3: #1e1e1e;
-    --gp: 50% / calc(var(--u) * 16.9) calc(var(--u) * 12.8);
-    background: conic-gradient(
-        from 122deg at 50% 85.15%,
-        var(--c2) 0 58deg,
-        var(--c3) 0 116deg,
-        #fff0 0 100%
-        )
-        var(--gp),
-    conic-gradient(from 122deg at 50% 72.5%, var(--c1) 0 116deg, #fff0 0 100%)
-        var(--gp),
-    conic-gradient(from 58deg at 82.85% 50%, var(--c3) 0 64deg, #fff0 0 100%)
-        var(--gp),
-    conic-gradient(
-        from 58deg at 66.87% 50%,
-        var(--c1) 0 64deg,
-        var(--c2) 0 130deg,
-        #fff0 0 100%
-        )
-        var(--gp),
-    conic-gradient(from 238deg at 17.15% 50%, var(--c2) 0 64deg, #fff0 0 100%)
-        var(--gp),
-    conic-gradient(
-        from 172deg at 33.13% 50%,
-        var(--c3) 0 66deg,
-        var(--c1) 0 130deg,
-        #fff0 0 100%
-        )
-        var(--gp),
-    linear-gradient(98deg, var(--c3) 0 15%, #fff0 calc(15% + 1px) 100%)
-        var(--gp),
-    linear-gradient(-98deg, var(--c2) 0 15%, #fff0 calc(15% + 1px) 100%)
-        var(--gp),
-    conic-gradient(
-        from -58deg at 50.25% 14.85%,
-        var(--c3) 0 58deg,
-        var(--c2) 0 116deg,
-        #fff0 0 100%
-        )
-        var(--gp),
-    conic-gradient(from -58deg at 50% 28.125%, var(--c1) 0 116deg, #fff0 0 100%)
-        var(--gp),
-    linear-gradient(90deg, var(--c2) 0 50%, var(--c3) 0 100%) var(--gp);
-    /* filter: blur(5px); */
-    animation: move 4s linear infinite;
-opacity: 0.8;
-}
-
-
-.container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* background: #121212;  */
-    background: linear-gradient(
-        135deg,
-        #121212 25%,
-        #1a1a1a 25%,
-        #1a1a1a 50%,
-        #121212 50%,
-        #121212 75%,
-        #1a1a1a 75%,
-        #1a1a1a
-    );
-    background-size: 40px 40px;
-    animation: move 2s linear infinite;
-}
-
-@keyframes move {
-    0% {
-        background-position: 0 0;
-    }
-    100% {
-        background-position: 40px 40px;
-    }
+body{
+    cursor: url('/assets/cursor.svg'), auto;
 }
