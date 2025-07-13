@@ -17,6 +17,8 @@
         <!-- From Uiverse.io by jeremyssocial --> 
         <div class="container-bg"></div>
 
+        <div id="cursor-indicator"></div>
+
         <nav class="navbar ">
             <div class="container"></div>
             <div class="logo"><a href="index.html">
@@ -93,6 +95,7 @@
         </section>
     
         <section id="about" class="about fade-in">
+            <div class="container"></div>
             <h2 class="scroll-animate section-title">About Me</h2>
             <div class="about-content scroll-animate" data-aos-delay="200">
                 <div class="about-flex-container">
@@ -386,4 +389,14 @@
             }, 500);
         });
     </script>
+    <script>
+  const indicator = document.getElementById('cursor-indicator');
+
+  document.addEventListener('mousemove', (e) => {
+    const offsetY = 0; // pixels below the mouse
+    indicator.style.left = e.clientX + 'px';
+    indicator.style.top = (e.clientY + offsetY) + 'px';
+  });
+</script>
+
 </html>
