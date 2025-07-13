@@ -309,3 +309,17 @@ window.addEventListener('load', () => {
     const loader = document.getElementById('preloader');
     loader.style.display = 'none'; // hides the preloader when page is fully loaded
 });
+
+
+const text = "Welcome to my povbfrgs tfrsgtfrtshtrsag reg regfe sgreasgtegsre gr egareaght eagte agwrte gtyhgrtfolio!";
+let index = 0;
+
+function type() {
+  if (index < text.length) {
+    document.getElementById("typed-text").innerHTML += text.charAt(index);
+    index++;
+    setTimeout(type, 100); // typing speed (ms)
+  }
+}
+
+window.onload = type;
