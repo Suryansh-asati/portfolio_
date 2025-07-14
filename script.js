@@ -83,42 +83,6 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Profile Picture Upload
-const profileInput = document.getElementById('profile-input');
-const profilePreview = document.getElementById('profile-preview');
-
-profileInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            profilePreview.src = e.target.result;
-            // Save to localStorage
-            localStorage.setItem('profilePicture', e.target.result);
-        };
-        reader.readAsDataURL(file);
-    }
-});
-
-// Load saved profile picture
-const savedProfilePicture = localStorage.getItem('profilePicture');
-if (savedProfilePicture) {
-    profilePreview.src = savedProfilePicture;
-}
-
-// Resume Download
-const resumeBtn = document.querySelector('.resume-btn');
-resumeBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    // Replace with your actual resume URL
-    const resumeUrl = 'path/to/your/resume.pdf';
-    const link = document.createElement('a');
-    link.href = resumeUrl;
-    link.download = 'resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-});
 
 // Form Submission with Animation
 const contactForm = document.getElementById('contact-form');
@@ -158,144 +122,27 @@ if (contactForm) {
     });
 }
 
-// Project Card Hover Effect
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-10px)';
-        card.querySelector('.project-overlay').style.opacity = '1';
-    });
 
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
-        card.querySelector('.project-overlay').style.opacity = '0';
-    });
-});
-
-// Skill Item Animation
-document.querySelectorAll('.skill-item').forEach(item => {
-    item.addEventListener('mouseenter', () => {
-        item.style.transform = 'translateY(-5px)';
-    });
-
-    item.addEventListener('mouseleave', () => {
-        item.style.transform = 'translateY(0)';
-    });
-});
-
-// Social Links Animation
-document.querySelectorAll('.social-link').forEach(link => {
-    link.addEventListener('mouseenter', () => {
-        link.style.transform = 'translateY(-3px)';
-    });
-
-    link.addEventListener('mouseleave', () => {
-        link.style.transform = 'translateY(0)';
-    });
-});
-
-// Intersection Observer for Scroll Animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+  threshold: 0.1
 };
 
 const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-        }
-    });
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      entry.target.classList.remove('invisible');
+    } else {
+      entry.target.classList.remove('visible');
+      entry.target.classList.add('invisible');
+    }
+  });
 }, observerOptions);
 
-// Observe all sections and animated elements
-document.querySelectorAll('section, .skill-item, .project-card').forEach(element => {
-    observer.observe(element);
-});
+// Target all desired elements
+document.querySelectorAll('section, .skill-item, .project-card, .fade-in')
+  .forEach(el => observer.observe(el));
 
-// Newsletter form handling
-const newsletterForm = document.querySelector('.card__form');
-newsletterForm.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const emailInput = this.querySelector('input[type="email"]');
-    const email = emailInput.value.trim();
-    
-    if (email) {
-        // Create mailto link for newsletter subscription
-        const mailtoLink = `mailto:suryansh.asati1@gmail.com?subject=Newsletter Subscription&body=Please add this email to newsletter: ${email}`;
-        
-        // Save to localStorage
-        let savedEmails = JSON.parse(localStorage.getItem('newsletterEmails') || '[]');
-        savedEmails.push({
-            email: email,
-            date: new Date().toISOString()
-        });
-        localStorage.setItem('newsletterEmails', JSON.stringify(savedEmails));
-        
-        // Open email client
-        window.location.href = mailtoLink;
-        
-        // Clear the input and show success message
-        emailInput.value = '';
-        
-        // Show success message with animation
-        const signUpButton = this.querySelector('.sign-up');
-        const originalText = signUpButton.textContent;
-        signUpButton.textContent = 'Subscribed!';
-        signUpButton.style.backgroundColor = 'var(--primary-color)';
-        
-        setTimeout(() => {
-            signUpButton.textContent = originalText;
-            signUpButton.style.backgroundColor = '';
-        }, 2000);
-    }
-});
-
-// Function to get all saved emails with timestamps
-function getSavedEmails() {
-    const emails = JSON.parse(localStorage.getItem('newsletterEmails') || '[]');
-    return emails.map(entry => ({
-        email: entry.email,
-        subscribed: new Date(entry.date).toLocaleString()
-    }));
-}
-
-// Function to export emails to CSV
-function exportEmailsToCSV() {
-    const emails = getSavedEmails();
-    const csvContent = "Email,Subscription Date\n" + 
-        emails.map(entry => `${entry.email},${entry.subscribed}`).join("\n");
-    
-    const blob = new Blob([csvContent], { type: 'text/csv' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'newsletter_subscribers.csv';
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
-}
-
-const faders = document.querySelectorAll('.fade-in');
-
-const appearOptions = {
-    threshold: 0.1
-};
-
-const appearOnScroll = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-    if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-    } else {
-        entry.target.classList.remove('visible');
-    }
-});
-}, appearOptions);
-
-faders.forEach(fader => {
-    appearOnScroll.observe(fader);
-});
 
 // Mouse cursor tracking
 document.addEventListener('DOMContentLoaded', () => {
