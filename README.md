@@ -4,8 +4,6 @@ A modern, responsive portfolio website showcasing my projects, skills, and profe
 
 ## 🌟 Live Demo
 *[**View Here**](https://suryanshasati.netlify.app/) - https://suryanshasati.netlify.app/*
-<img width="1897" height="995" alt="image" src="https://github.com/user-attachments/assets/08b917d0-faa4-44bd-9df7-902c6b0aa4f6" />
-
 
 ## ✨ Features
 
