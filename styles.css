@@ -143,13 +143,20 @@ body {
     opacity: 0;
     filter: blur(4px);
     transform: translateY(20px);
-    transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
 }
 
 .fade-in.visible {
     opacity: 1;
     filter: blur(0);
     transform: translateY(0);
+}
+
+.invisible {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(20px);
+    /* transition: opacity 0.8s ease, filter 0.8s ease, transform 0.8s ease; */
 }
 
 /* From Uiverse.io by mobinkakei */ 
@@ -446,9 +453,9 @@ nav ul li a:hover {
 /* About Section */
 .about {
     position: relative;
-    width: 800px;
-    margin: 0 auto;
-    padding: 5rem 10%;
+    max-width: 800px;
+    margin: 2.5rem auto;
+    padding: 2.5rem 10%;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
@@ -461,7 +468,6 @@ nav ul li a:hover {
     font-size: 2.5rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid var(--orange-yellow-crayola);
 }
 
 .about-content {
@@ -1551,6 +1557,7 @@ opacity: 0.8;
     height: 100%;
     background: #141414;
     --color1: var(--orange-yellow-crayola);
+    z-index: -1;
     background-image: radial-gradient(4px 100px at 0px 235px, var(--color1), #0000),
         radial-gradient(4px 100px at 300px 235px, var(--color1), #0000),
         radial-gradient(1.5px 1.5px at 150px 117.5px, var(--color1) 100%, #0000 150%),
@@ -1710,4 +1717,9 @@ opacity: 0.8;
 
 body{
     cursor: url('/assets/cursor.svg'), auto;
+}
+
+.about{
+    border-radius: 10px;
+    background: var(--eerie-black-1);
 }
