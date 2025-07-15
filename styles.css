@@ -494,7 +494,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     gap: 2rem;
-    margin-bottom: 3rem;
+    /* margin: 3rem; */
 }
 
 .about-image {
