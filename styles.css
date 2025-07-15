@@ -458,6 +458,7 @@ nav ul li a:hover {
     padding: 2.5rem 10%;
     background-size: cover;
     background-position: center;
+    background: white;
     border-radius: 10px;
     width: 80%;
 }
@@ -469,6 +470,18 @@ nav ul li a:hover {
     font-size: 2.5rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.abouts{
+    position: relative;
+    width: 100% ;
+    height: 100%;
+    /* padding: 2rem; */
+    margin: 0 auto;
+    background: var(--eerie-black-1);
+    border-radius: 10px;
+    
+    transition: var(--transition-back);
 }
 
 .about-content {
@@ -1719,3 +1732,14 @@ opacity: 0.8;
 /* body{
     cursor: url('/assets/cursor.s vg'), auto;
 } */
+
+.container-black {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--eerie-black-1);
+    /* z-index: -1; */
+    border-radius: 10px;
+}
