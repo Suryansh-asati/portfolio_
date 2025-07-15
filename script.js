@@ -132,16 +132,17 @@ const observer = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
       entry.target.classList.remove('invisible');
-    } else {
-      entry.target.classList.remove('visible');
-      entry.target.classList.add('invisible');
-    }
+    } 
+    // else {
+    //   entry.target.classList.remove('visible');
+    //   entry.target.classList.add('invisible');
+    // }
   });
 }, observerOptions);
 
 // Target all desired elements
-document.querySelectorAll('section, .skill-item, .project-card, .fade-in')
-  .forEach(el => observer.observe(el));
+// document.querySelectorAll('section, .skill-item, .project-card, .fade-in')
+//   .forEach(el => observer.observe(el));
 
 
 // Mouse cursor tracking

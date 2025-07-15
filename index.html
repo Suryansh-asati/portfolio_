@@ -44,7 +44,7 @@
             <div class="container-bg"></div>
             <div class="hero-content">
                 <div class="profile-upload ">
-                    <img src="/assets/pfp.jpg" alt="Profile Picture" id="profile-preview" class="profile-picture" loading="lazy" />
+                    <img src="assets/pfp.jpg" alt="Profile Picture" id="profile-preview" class="profile-picture" loading="lazy" />
                     <div class="profile-overlay">
                         <ul class="example-2">
                         <li class="icon-content p01">
@@ -391,36 +391,6 @@
             }, 500);
         });
     </script>
-    <script>
-        // const indicator = document.getElementById('cursor-indicator');
-
-        // document.addEventListener('mousemove', (e) => {
-        //     const offsetY = 0;
-        //     indicator.style.left = e.clientX + 'px';
-        //     indicator.style.top = (e.clientY + offsetY) + 'px';
-        // });
-</script>
-
-    <script>
-        const indicator = document.getElementById('cursor-indicator');
-        const offsetY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-            indicator.style.left = `${e.clientX}px`;
-            indicator.style.top = `${e.clientY + offsetY}px`;
-            indicator.style.opacity = "1"; // ensure it’s visible
-        });
-
-        // Hide when mouse leaves the viewport
-        document.addEventListener('mouseleave', () => {
-            indicator.style.opacity = "0";
-        });
-
-        // Show when mouse re-enters
-        document.addEventListener('mouseenter', () => {
-            indicator.style.opacity = "1";
-        });
-</script>
 
 
 </html>

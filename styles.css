@@ -141,9 +141,9 @@ body {
 /* Fade-in Animation */
 .fade-in {
     opacity: 0;
-    filter: blur(4px);
+    filter: blur(10px);
     transform: translateY(20px);
-    transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
+    transition: opacity 2s ease, filter 2s ease, transform 2s ease;
 }
 
 .fade-in.visible {
@@ -1716,6 +1716,6 @@ opacity: 0.8;
     }
 }
 
-body{
-    cursor: url('/assets/cursor.svg'), auto;
-}
+/* body{
+    cursor: url('/assets/cursor.s vg'), auto;
+} */
