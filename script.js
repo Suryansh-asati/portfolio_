@@ -170,3 +170,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Cursor outline effect
+document.addEventListener('DOMContentLoaded', () => {
+    const cursorOutline = document.querySelector('.cursor-outline');
+    
+    if (cursorOutline) {
+        document.addEventListener('mousemove', (e) => {
+            // Use requestAnimationFrame for smooth animation
+            requestAnimationFrame(() => {
+                cursorOutline.style.left = `${e.clientX}px`;
+                cursorOutline.style.top = `${e.clientY}px`;
+            });
+        });
+        
+        // Hide cursor outline when mouse leaves the window
+        document.addEventListener('mouseleave', () => {
+            cursorOutline.style.opacity = '0';
+        });
+        
+        // Show cursor outline when mouse enters the window
+        document.addEventListener('mouseenter', () => {
+            cursorOutline.style.opacity = '1';
+        });
+    }
+});
