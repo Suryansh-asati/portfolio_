@@ -18,15 +18,16 @@
         <!-- <div class="container-bg"></div> -->
 
         <div id="cursor-indicator"></div>
+        <div class="cursor-outline"></div>
 
         <nav class="navbar ">
-            <div class="container"></div>
+            <!-- <div class="container"></div> -->
             <div class="logo"><a href="index.html">
                 <!-- <img src="/assets/sa-favicon.svg" alt="Suryansh's Portfolio"> -->
                 <p>Portfolio</p>
             </a></div>
             <ul class="nav-links">
-                <div class="container"></div>
+                <!-- <div class="container"></div> -->
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#resume">Resume</a></li>
@@ -312,7 +313,7 @@
         </section>
     <!--Footer Section-->
         <footer class="fade-in ">
-            <div class="container"></div>
+            <!-- <div class="container"></div> -->
             <div class="below-form"  data-aos-delay="200">
                 <h3  data-aos-delay="200">Also connect with me at:</h3>
                 <!-- <div class="social-links fade-in">
@@ -392,5 +393,29 @@
                 body.classList.remove('loading');
             }, 500);
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const cursorOutline = document.querySelector('.cursor-outline');
+    
+    if (cursorOutline) {
+        document.addEventListener('mousemove', (e) => {
+            // Use requestAnimationFrame for smooth animation
+            requestAnimationFrame(() => {
+                cursorOutline.style.left = `${e.clientX}px`;
+                cursorOutline.style.top = `${e.clientY}px`;
+            });
+        });
+        
+        // Hide cursor outline when mouse leaves the window
+        document.addEventListener('mouseleave', () => {
+            cursorOutline.style.opacity = '0';
+        });
+        
+        // Show cursor outline when mouse enters the window
+        document.addEventListener('mouseenter', () => {
+            cursorOutline.style.opacity = '1';
+        });
+    }
+});
     </script>
 </html>
