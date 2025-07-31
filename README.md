@@ -95,10 +95,4 @@ python -m http.server 8000
 - Instagram: [@suryansh.asati](https://www.instagram.com/suryansh.asati/)
 - Photography: [@lightart.as](https://www.instagram.com/lightart.as/)
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 Made with ❤️ by Suryansh Asati
-
