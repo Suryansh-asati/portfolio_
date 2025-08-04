@@ -213,11 +213,12 @@ body {
     align-items: center;
     padding: 1em 5%;
     -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     transition: var(--transition-back);
     border-radius: 10px;
+    border: 1.5px solid var(--c1);
 }
 
 
@@ -270,7 +271,7 @@ body {
     font-size: 0.9rem;
     color: var(--orange-yellow-crayola);
     font-weight: 500;
-    transition: var(--transition-back);
+    transition: var(--transition);
     position: relative;
 }
 
@@ -295,6 +296,8 @@ nav ul li a {
 
 nav ul li a:hover {
     color: var(--orange-yellow-crayola) !important;
+    background: var(--primary-color);
+    padding: 0.25rem 0.5rem;
 }
 
 .resume-btn {
