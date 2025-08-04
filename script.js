@@ -194,3 +194,22 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function highlightActiveNavLink() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPosition = window.scrollY + 100;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            const correspondingNavLink = document.querySelector(`.nav_links[href="#${sectionId}"]`);
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                if (correspondingNavLink) {
+                    correspondingNavLink.classList.add('active');
+                }
+            }
+        });
+    }
