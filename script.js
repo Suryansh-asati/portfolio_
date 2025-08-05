@@ -124,20 +124,20 @@ if (contactForm) {
 
 
 const observerOptions = {
-  threshold: 0.1
+    threshold: 0.1
 };
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      entry.target.classList.remove('invisible');
-    } 
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        entry.target.classList.remove('invisible');
+        } 
     // else {
     //   entry.target.classList.remove('visible');
     //   entry.target.classList.add('invisible');
     // }
-  });
+    });
 }, observerOptions);
 
 // Target all desired elements
