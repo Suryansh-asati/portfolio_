@@ -218,7 +218,7 @@ body {
     z-index: 1000;
     transition: var(--transition-back);
     border-radius: 10px;
-    border: 1.5px solid var(--c1);
+    border: 1.5px solid var(--orange-yellow-crayola);
 }
 
 
