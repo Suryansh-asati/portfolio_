@@ -16,6 +16,23 @@ const fadeObserver = new IntersectionObserver((entries) => {
     threshold: 0.1
 });
 
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        entry.target.classList.remove('invisible');
+        } 
+    // else {
+    //   entry.target.classList.remove('visible');
+    //   entry.target.classList.add('invisible');
+    // }
+    });
+}, observerOptions);
+
 // Observe all fade-in elements
 document.querySelectorAll('.fade-in').forEach(element => {
     fadeObserver.observe(element);
@@ -122,27 +139,6 @@ if (contactForm) {
     });
 }
 
-
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        entry.target.classList.remove('invisible');
-        } 
-    // else {
-    //   entry.target.classList.remove('visible');
-    //   entry.target.classList.add('invisible');
-    // }
-    });
-}, observerOptions);
-
-// Target all desired elements
-// document.querySelectorAll('section, .skill-item, .project-card, .fade-in')
-//   .forEach(el => observer.observe(el));
 
 
 // Mouse cursor tracking
