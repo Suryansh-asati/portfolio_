@@ -910,10 +910,10 @@ footer {
 @media screen and (max-width: 850px) {
     /* Navbar responsive*/
     .nav-links {
-        
+        width: 100%;
         position: absolute;
-        right: -100%;
-        top: 100%;
+        right: -1100px;
+        top: 110%;
         /* height: calc(100vh - 100px ); */
         /* background: var(--big-ol-gradient-2); */
         background: linear-gradient(135deg, black, grey);
@@ -924,7 +924,7 @@ footer {
         align-items: center;
         padding: 2rem;
         transition: var(--transition);
-        border-radius: 0px 0 0 10px;
+        border-radius: 10px;
         box-shadow: 0 4px 15px rgba(15, 48, 56, 0.5);
     }
 
