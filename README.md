@@ -87,6 +87,7 @@ python -m http.server 8000
 - [ ] More interactive animations
 - [ ] Backend integration for contact form
 - [ ] Performance optimizations
+- [ ] Adding more projects
 
 ## 🤝 Connect With Me
 
