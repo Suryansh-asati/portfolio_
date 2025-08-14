@@ -11,7 +11,7 @@ A modern, responsive portfolio website showcasing my projects, skills, and profe
 - **Interactive UI**: Smooth animations and transitions
 - **Project Showcase**: Detailed project cards with live demos
 - **Skills Display**: Visual representation of technical skills
-- **Social Media Integration**: Connected with LinkedIn & GitHub
+- **Social Media Integration**: Connected with LinkedIn, GitHuB and Instagram
 
 ## 🛠️ Tech Stack
 
