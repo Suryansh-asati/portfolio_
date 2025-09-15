@@ -99,7 +99,7 @@ app.get('/api/health', (req, res) => {
 
 // Dynamic sitemap.xml
 app.get('/sitemap.xml', (req, res) => {
-  let urls = ['/', '/projects.html'];
+  let urls = ['/', '/projects'];
   try {
     const raw = fs.readFileSync(PROJECTS_PATH, 'utf8');
     const projects = JSON.parse(raw);
@@ -113,6 +113,21 @@ app.get('/sitemap.xml', (req, res) => {
 app.get('/robots.txt', (req, res) => {
   const robots = `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`;
   res.type('text/plain').send(robots);
+});
+
+// Normalize trailing slash on /projects/
+app.get('/projects/', (req, res) => {
+  res.redirect(301, '/projects');
+});
+
+// Pretty URL for Projects: serve /projects without .html
+app.get('/projects', (req, res) => {
+  res.sendFile(path.join(__dirname, 'projects.html'));
+});
+
+// Redirect legacy /projects.html to canonical /projects
+app.get('/projects.html', (req, res) => {
+  res.redirect(301, '/projects');
 });
 
 // Finally, serve static files
