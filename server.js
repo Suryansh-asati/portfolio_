@@ -149,9 +149,14 @@ app.get('/views/projects.ejs', (req, res) => {
 
 // Render home with EJS as well (optional, keeps parity)
 app.get(['/', '/index.html'], (req, res, next) => {
-  // If index.ejs exists, render it, else fall back to static file
+  // Render EJS and pass projects from data/projects.json
   try {
-    return res.render('index');
+    let projects = [];
+    try {
+      const raw = fs.readFileSync(PROJECTS_PATH, 'utf8');
+      projects = JSON.parse(raw);
+    } catch {}
+    return res.render('index', { projects });
   } catch (e) {
     next();
   }
