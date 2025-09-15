@@ -4,14 +4,48 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Suryansh's Portfolio</title>
+                <meta name="description" content="Portfolio of Suryansh Asati — developer and designer. Explore projects, skills, and experience.">
+                <link rel="canonical" id="canonical-link" href="/">
+                <meta name="theme-color" content="#0d1a14">
+
+                <!-- Open Graph / Facebook -->
+                <meta property="og:type" content="website">
+                <meta property="og:title" content="Suryansh's Portfolio">
+                <meta property="og:description" content="Developer portfolio: projects, skills, and experience.">
+                <meta property="og:url" id="og-url" content="/">
+                <meta property="og:image" content="/assets/pfp.jpg">
+
+                <!-- Twitter -->
+                <meta name="twitter:card" content="summary_large_image">
+                <meta name="twitter:title" content="Suryansh's Portfolio">
+                <meta name="twitter:description" content="Developer portfolio: projects, skills, and experience.">
+                <meta name="twitter:image" content="/assets/pfp.jpg">
+
+                <!-- JSON-LD Structured Data -->
+                <script type="application/ld+json">
+                {
+                    "@context": "https://schema.org",
+                    "@type": "Person",
+                    "name": "Suryansh Asati",
+                    "url": "/",
+                    "image": "/assets/pfp.jpg",
+                    "sameAs": [
+                        "https://linkedin.com/in/suryansh-asati",
+                        "https://github.com/Suryansh-asati",
+                        "https://instagram.com/suryansh.asati"
+                    ],
+                    "jobTitle": "Developer"
+                }
+                </script>
         <link rel="icon" type="image/x-icon" href="/assets/sa-favicon.svg">
     <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+        <link rel="preconnect" href="https://unpkg.com" crossorigin>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-        <link rel="stylesheet" href="https://geist.vercel.app/font.css" />
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="/assets/pfp.jpg" imagesrcset="/assets/pfp.jpg 1x" fetchpriority="high">
     </head>
     <body class="big-ol-gradient-2 loading " id="main">
         <div class="loader" id="load">
@@ -59,7 +93,7 @@
                     <a href="#contact" class="cta-button fade-in btn card">Get in Touch</a>
                 </div>
                 <div class="profile-upload ">
-                    <img src="assets/pfp.jpg" alt="Profile Picture" id="profile-preview" class="profile-picture" loading="lazy" />
+                    <img src="assets/pfp.jpg" alt="Profile Picture" id="profile-preview" class="profile-picture" loading="eager" fetchpriority="high" decoding="async" />
                     <div class="profile-overlay">
                         <ul class="example-2">
                         <li class="icon-content p01">
@@ -141,11 +175,11 @@
             </div>
         </section>
     
-        <section id="about" class="about fade-in card">
+    <section id="about" class="about fade-in card">
             <div class="container-black"></div>
             <div class="abouts">
             <h2 class="scroll-animate section-title">About Me</h2>
-            <div class="about-content scroll-animate" data-aos-delay="200">
+            <div class="about-content">
                 <div class="about-flex-container">
                     <!-- <div class="about-image">
                         <img src="/assets/download.svg" alt="Programing Languages" class="about-laptop-img">
@@ -160,7 +194,7 @@
             </div>
         </section>
 
-        <section class="skills-section fade-in about-content" id="skills">
+    <section class="skills-section fade-in about-content" id="skills">
             <div class="skills fade-in">
                     <h3 class="section-title">Skills</h3>
                     <!-- Programming languages marquee using same ticker system -->
@@ -219,15 +253,15 @@
                             <i class="fab fa-html5"></i>
                             <span>HTML5</span>
                         </li>
-                        <li class="skill-item card"  data-aos-delay="200">
+                        <li class="skill-item card">
                             <i class="fab fa-css3-alt"></i>
                             <span>CSS3</span>
                         </li>
-                        <li class="skill-item card"  data-aos-delay="300">
+                        <li class="skill-item card">
                             <i class="fab fa-js"></i>
                             <span>JavaScript</span>
                         </li>
-                        <li class="skill-item card"  data-aos-delay="400">
+                        <li class="skill-item card">
                             <i class="fab fa-c"></i>
                             <span>C/C++</span>
                         </li>
@@ -268,34 +302,34 @@
                         </div>
                     </div>
                     <ul class="skills-grid">
-                        <li class="skill-item card"  data-aos-delay="100">
+                        <li class="skill-item card">
                             <i class="fab fa-python"></i>
                             <span>Python</span>
                         </li>
-                        <li class="skill-item card"  data-aos-delay="200">
+                        <li class="skill-item card">
                             <i class="fab fa-figma"></i>
                             <span>Figma</span>
                         </li>
-                        <li class="skill-item card"  data-aos-delay="300">
+                        <li class="skill-item card">
                             <i class="fab fa-react"></i>
                             <span>React</span>
                         </li>
-                        <li class="skill-item card"  data-aos-delay="400">
+                        <li class="skill-item card">
                             <i class="fab fa-java"></i>
                             <span>Java</span>
                         </li>
-                        <li class="skill-item card"  data-aos-delay="500">
+                        <li class="skill-item card">
                             <i class="fab fa-bootstrap"></i>
                             <span>Bootstrap</span>
                         </li>
-                        <li class="skill-item card"  data-aos-delay="500">
+                        <li class="skill-item card">
                             <i class="fab fa-node-js"></i>
                             <span>Node Js</span>
                         </li>
                     </ul>
                 </div>
             <!-- After Learning Docket section -->
-                <div class="resume-section fade-in " id="resume" data-aos-delay="200">
+                <div class="resume-section fade-in " id="resume">
                     <h2 class="section-title">My Resume</h2>
                 <!--Education Section Resume-->
                     <section class="timeline card">
@@ -353,7 +387,7 @@
             <div class="project-grid">
                 <div class="project-card card"  data-aos-delay="100">
                     <div class="project-image">
-                        <img src="/assets/project1.png" alt="Well-Being-Hub" loading="lazy">
+                        <img src="/assets/project1.png" alt="Well-Being-Hub" loading="lazy" decoding="async">
                         <div class="project-overlay">
                             <div class="project-tech">
                                 <span>HTML</span>
@@ -373,7 +407,7 @@
                 </div>
                 <div class="project-card card"  data-aos-delay="200">
                     <div class="project-image">
-                        <img src="/assets/project2.jpg" alt="My Banko App" loading="lazy">
+                        <img src="/assets/project2.jpg" alt="My Banko App" loading="lazy" decoding="async">
                         <div class="project-overlay">
                             <div class="project-tech">
                                 <span>Flutter</span>
@@ -394,7 +428,7 @@
                 </div>
                 <div class="project-card card"  data-aos-delay="100">
                     <div class="project-image">
-                        <img src="/assets/project3.png" alt="Well-Being-Hub" loading="lazy">
+                        <img src="/assets/project3.png" alt="StreakFit" loading="lazy" decoding="async">
                         <div class="project-overlay">
                             <div class="project-tech">
                                 <span>HTML</span>
@@ -412,6 +446,12 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="projects-cta">
+                <a href="projects.html" class="btn card more-projects-btn" aria-label="See more projects">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Click for more projects</span>
+                </a>
             </div>
         </section>
     
@@ -541,50 +581,7 @@
                 <i>"Make everyday worth it"</i>
             </div>
         </footer>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-        <script async src="https://www.instagram.com/embed.js"></script>
-        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-        <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="script.js" defer></script>
     </body>
-    <script>
-        // Preloader functionality
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('load');
-            const body = document.body;
-            
-            // Add fade-out animation to loader
-            loader.classList.add('fade-out');
-            
-            // Wait for fade-out animation to complete before hiding loader
-            setTimeout(() => {
-                loader.style.display = 'none';
-                body.classList.remove('loading');
-            }, 500);
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-    const cursorOutline = document.querySelector('.cursor-outline');
-    
-    if (cursorOutline) {
-        document.addEventListener('mousemove', (e) => {
-            // Use requestAnimationFrame for smooth animation
-            requestAnimationFrame(() => {
-                cursorOutline.style.left = `${e.clientX}px`;
-                cursorOutline.style.top = `${e.clientY}px`;
-            });
-        });
-        
-        // Hide cursor outline when mouse leaves the window
-        document.addEventListener('mouseleave', () => {
-            cursorOutline.style.opacity = '0';
-        });
-        
-        // Show cursor outline when mouse enters the window
-        document.addEventListener('mouseenter', () => {
-            cursorOutline.style.opacity = '1';
-        });
-    }
-});
-    </script>
 </html>

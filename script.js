@@ -1,8 +1,18 @@
-// Initialize AOS (Animate On Scroll)
-AOS.init({
-    duration: 800,
-    once: true,
-    offset: 100
+// Initialize AOS (Animate On Scroll) if available
+if (window.AOS) {
+    window.AOS.init({ duration: 800, once: true, offset: 100 });
+}
+
+// Preloader functionality (moved from inline HTML)
+window.addEventListener('load', () => {
+    const loader = document.getElementById('load');
+    const body = document.body;
+    if (!loader) return;
+    loader.classList.add('fade-out');
+    setTimeout(() => {
+        loader.style.display = 'none';
+        body.classList.remove('loading');
+    }, 500);
 });
 
 // Fade-in Animation Observer
@@ -281,7 +291,7 @@ highlightActiveNavLink();
 
     const colors = {
         dark: ['#00e676', '#2f8d46', 'rgba(0,230,118,0.25)'],
-        light: ['#14c38e', '#23a055', 'rgba(20,195,142,0.2)']
+        light: ['#0fbf7e', '#0c8f53', 'rgba(12,143,83,0.28)']
     };
 
     function currentPalette() {
@@ -289,11 +299,16 @@ highlightActiveNavLink();
     }
 
     let mouse = { x: -9999, y: -9999 };
+    let rafMouse = null;
     window.addEventListener('mousemove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-    });
+        if (rafMouse) return;
+        rafMouse = requestAnimationFrame(() => {
+            const rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+            rafMouse = null;
+        });
+    }, { passive: true });
     window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
 
     // Particle field
@@ -392,5 +407,18 @@ highlightActiveNavLink();
 
         requestAnimationFrame(step);
     }
-    requestAnimationFrame(step);
+    (window.requestIdleCallback || window.requestAnimationFrame)(step);
+})();
+
+// Update canonical and og:url at runtime to absolute URL (useful on Vercel preview/production)
+(function updateCanonicalOg() {
+    try {
+        const absoluteUrl = window.location.origin + window.location.pathname;
+        const canonical = document.getElementById('canonical-link');
+        const ogUrl = document.getElementById('og-url');
+        if (canonical) canonical.setAttribute('href', absoluteUrl);
+        if (ogUrl) ogUrl.setAttribute('content', absoluteUrl);
+    } catch (_) {
+        // no-op
+    }
 })();
