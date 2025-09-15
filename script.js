@@ -151,7 +151,7 @@ if (contactForm) {
 
 // Progressive enhancement: load projects dynamically on projects.html when available
 document.addEventListener('DOMContentLoaded', async () => {
-    const isProjectsPage = /\/projects\.html(\?|$)/.test(window.location.pathname);
+    const isProjectsPage = /\/projects(\.html)?(\/?|$|\?)/.test(window.location.pathname);
     if (!isProjectsPage) return;
     const grid = document.querySelector('.project-grid');
     if (!grid) return;

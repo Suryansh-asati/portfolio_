@@ -18,6 +18,15 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 const SITE_URL = process.env.SITE_URL || `http://localhost:${PORT}`;
+const IS_PROD = process.env.NODE_ENV === 'production';
+
+// View engine (EJS)
+app.set('view engine', 'ejs');
+// Search templates in project root (for projects.ejs) and in ./views (for index.ejs)
+app.set('views', [
+  __dirname,
+  path.join(__dirname, 'views')
+]);
 
 // Middleware
 app.use(helmet({
@@ -115,23 +124,41 @@ app.get('/robots.txt', (req, res) => {
   res.type('text/plain').send(robots);
 });
 
-// Normalize trailing slash on /projects/
-app.get('/projects/', (req, res) => {
-  res.redirect(301, '/projects');
+// Normalize trailing slash only for the exact URL /projects/
+app.use((req, res, next) => {
+  if (req.originalUrl === '/projects/') {
+    return res.redirect(IS_PROD ? 301 : 302, '/projects');
+  }
+  next();
 });
 
-// Pretty URL for Projects: serve /projects without .html
+// Pretty URL for Projects: render /projects
 app.get('/projects', (req, res) => {
-  res.sendFile(path.join(__dirname, 'projects.html'));
+  res.render('projects');
 });
 
 // Redirect legacy /projects.html to canonical /projects
 app.get('/projects.html', (req, res) => {
-  res.redirect(301, '/projects');
+  res.redirect(IS_PROD ? 301 : 302, '/projects');
 });
 
-// Finally, serve static files
-app.use(express.static(__dirname));
+// Redirect legacy EJS path (if linked anywhere) to /projects
+app.get('/views/projects.ejs', (req, res) => {
+  res.redirect(IS_PROD ? 301 : 302, '/projects');
+});
+
+// Render home with EJS as well (optional, keeps parity)
+app.get(['/', '/index.html'], (req, res, next) => {
+  // If index.ejs exists, render it, else fall back to static file
+  try {
+    return res.render('index');
+  } catch (e) {
+    next();
+  }
+});
+
+// Finally, serve static files (disable directory redirect to avoid /path -> /path/ redirects)
+app.use(express.static(__dirname, { redirect: false }));
 
 app.listen(PORT, () => {
   console.log(`Server running at ${SITE_URL}`);

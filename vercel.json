@@ -2,7 +2,8 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/projects.html", "destination": "/projects", "statusCode": 301 }
+    { "source": "/projects.html", "destination": "/projects", "statusCode": 301 },
+    { "source": "/views/projects.ejs", "destination": "/projects", "statusCode": 301 }
   ],
   "rewrites": [
     { "source": "/sitemap.xml", "destination": "/api/sitemap" },
