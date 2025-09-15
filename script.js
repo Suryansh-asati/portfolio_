@@ -199,13 +199,198 @@ function highlightActiveNavLink() {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
             const sectionId = section.getAttribute('id');
-            const correspondingNavLink = document.querySelector(`.nav_links[href="#${sectionId}"]`);
+            const correspondingNavLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
 
             if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                 navLinks.forEach(link => link.classList.remove('active'));
-                if (correspondingNavLink) {
-                    correspondingNavLink.classList.add('active');
-                }
+                if (correspondingNavLink) { correspondingNavLink.classList.add('active'); }
             }
         });
     }
+
+// Update active link on scroll
+window.addEventListener('scroll', () => {
+    highlightActiveNavLink();
+});
+highlightActiveNavLink();
+
+// Theme toggle with persistence and system preference fallback
+(function initThemeToggle() {
+    const root = document.documentElement;
+    const toggleBtn = document.querySelector('.theme-toggle');
+    const THEME_KEY = 'preferred-theme';
+
+    function applyTheme(theme) {
+        if (theme === 'light') {
+            root.setAttribute('data-theme', 'light');
+            toggleBtn && (toggleBtn.innerHTML = '<i class="fas fa-sun"></i>');
+        } else {
+            root.removeAttribute('data-theme');
+            toggleBtn && (toggleBtn.innerHTML = '<i class="fas fa-moon"></i>');
+        }
+    }
+
+    // Determine initial theme
+    const stored = localStorage.getItem(THEME_KEY);
+    let initial = stored;
+    if (!initial) {
+        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+        initial = prefersLight ? 'light' : 'dark';
+    }
+    applyTheme(initial);
+
+    // Toggle on click
+    toggleBtn && toggleBtn.addEventListener('click', () => {
+        const current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+        const next = current === 'light' ? 'dark' : 'light';
+        applyTheme(next);
+        localStorage.setItem(THEME_KEY, next);
+    });
+
+    // Update if system preference changes and user hasn't explicitly set
+    const media = window.matchMedia('(prefers-color-scheme: light)');
+    media.addEventListener && media.addEventListener('change', (e) => {
+        const explicit = localStorage.getItem(THEME_KEY);
+        if (!explicit) {
+            applyTheme(e.matches ? 'light' : 'dark');
+        }
+    });
+})();
+
+// Interactive hero background
+(function heroCanvas() {
+    const canvas = document.getElementById('hero-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
+    let width = 0, height = 0;
+    const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+    let reduceMotion = prefersReduced ? prefersReduced.matches : false;
+
+    function resize() {
+        const rect = canvas.getBoundingClientRect();
+        width = Math.floor(rect.width);
+        height = Math.floor(rect.height);
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    resize();
+    window.addEventListener('resize', resize);
+
+    const colors = {
+        dark: ['#00e676', '#2f8d46', 'rgba(0,230,118,0.25)'],
+        light: ['#14c38e', '#23a055', 'rgba(20,195,142,0.2)']
+    };
+
+    function currentPalette() {
+        return document.documentElement.getAttribute('data-theme') === 'light' ? colors.light : colors.dark;
+    }
+
+    let mouse = { x: -9999, y: -9999 };
+    window.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+    });
+    window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
+
+    // Particle field
+    const COUNT_BASE = 60; // scales with width
+    let particles = [];
+
+    function initParticles() {
+        let count = Math.floor((width * height) / 35000) + COUNT_BASE;
+        if (width < 640) count = Math.floor(count * 0.65);
+        if (reduceMotion) count = Math.floor(count * 0.35);
+        particles = new Array(count).fill(0).map(() => ({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.6,
+            vy: (Math.random() - 0.5) * 0.6,
+            r: Math.random() * 1.8 + 0.6
+        }));
+    }
+    initParticles();
+    window.addEventListener('resize', initParticles);
+
+    function step() {
+        const [c1, c2, glow] = currentPalette();
+        ctx.clearRect(0, 0, width, height);
+
+        // subtle gradient backdrop
+        const g = ctx.createLinearGradient(0, 0, width, height);
+        g.addColorStop(0, 'rgba(0,0,0,0)');
+        g.addColorStop(1, 'rgba(0,0,0,0)');
+        ctx.fillStyle = g;
+        ctx.fillRect(0, 0, width, height);
+
+        // Draw connections
+        ctx.lineWidth = 1;
+        for (let i = 0; i < particles.length; i++) {
+            const p = particles[i];
+
+            // attraction to mouse
+            const dx = mouse.x - p.x;
+            const dy = mouse.y - p.y;
+            const dist = Math.hypot(dx, dy);
+            const influence = Math.max(0, 1 - dist / 180);
+            p.vx += (dx / (dist || 1)) * 0.04 * influence;
+            p.vy += (dy / (dist || 1)) * 0.04 * influence;
+
+            // velocity damping
+            p.vx *= 0.985;
+            p.vy *= 0.985;
+
+            // move
+            p.x += p.vx;
+            p.y += p.vy;
+
+            // bounce
+            if (p.x < 0 || p.x > width) p.vx *= -1;
+            if (p.y < 0 || p.y > height) p.vy *= -1;
+
+            // draw particle
+            ctx.beginPath();
+            ctx.fillStyle = c1;
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        // Lines between nearby particles
+        if (!reduceMotion) {
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const a = particles[i], b = particles[j];
+                    const dx = a.x - b.x, dy = a.y - b.y;
+                    const d = dx * dx + dy * dy;
+                    if (d < 12000) {
+                        ctx.strokeStyle = glow;
+                        ctx.globalAlpha = Math.max(0.05, 1 - d / 12000);
+                        ctx.beginPath();
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
+                        ctx.stroke();
+                        ctx.globalAlpha = 1;
+                    }
+                }
+            }
+        }
+
+        // Cursor pulse
+        if (mouse.x > 0 && !reduceMotion) {
+            const rad = 30;
+            const grad = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, rad);
+            grad.addColorStop(0, c2);
+            grad.addColorStop(1, 'rgba(0,0,0,0)');
+            ctx.fillStyle = grad;
+            ctx.beginPath();
+            ctx.arc(mouse.x, mouse.y, rad, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+})();
