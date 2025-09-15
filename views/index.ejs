@@ -383,81 +383,43 @@
     
   <!--Project Section-->
     <section id="projects" class="projects fade-in">
-      <h2 class="section-title">My Projects</h2>
-      <div class="project-grid">
-        <div class="project-card card"  data-aos-delay="100">
-          <div class="project-image">
-            <img src="/assets/project1.png" alt="Well-Being-Hub" loading="lazy" decoding="async">
-            <div class="project-overlay">
-              <div class="project-tech">
-                <span>HTML</span>
-                <span>•</span>
-                <span>CSS</span>
-                <span>•</span>
-                <span>JavaScript</span>
+        <h2 class="section-title">My Projects</h2>
+        <div class="project-grid">
+          <% (projects || []).slice(0, 6).forEach(function(p) { %>
+            <div class="project-card card" data-aos-delay="100">
+              <div class="project-image">
+                <img src="<%= p.image %>" alt="<%= p.title %>" loading="lazy" decoding="async">
+                <div class="project-overlay">
+                  <div class="project-tech">
+                    <% (p.tags || []).forEach(function(t, i){ %>
+                      <span><%= t %></span>
+                      <% if (i < (p.tags.length - 1)) { %><span>•</span><% } %>
+                    <% }) %>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3><%= p.title %></h3>
+                <p><%= p.description || '' %></p>
+                <div class="project-links">
+                  <% if (p.links && p.links.github) { %>
+                    <a href="<%= p.links.github %>" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                  <% } %>
+                  <% if (p.links && p.links.live) { %>
+                    <a href="<%= p.links.live %>" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                  <% } %>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="project-content">
-            <h3>Well-Being-Hub</h3>
-            <p>The one-step solution to get relief from your stress. Live a stress-free life!</p>
-            <div class="project-links">
-              <a href="https://github.com/Suryansh-asati/Well-Being-Hub" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-              <a href="https://suryansh-asati.github.io/Well-Being-Hub/" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-            </div>
-          </div>
+          <% }) %>
         </div>
-        <div class="project-card card"  data-aos-delay="200">
-          <div class="project-image">
-            <img src="/assets/project2.jpg" alt="My Banko App" loading="lazy" decoding="async">
-            <div class="project-overlay">
-              <div class="project-tech">
-                <span>Flutter</span>
-                <span>Firebase</span>
-                <span>Botpress</span>
-                <span>Pathway</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>My Banko App</h3>
-            <p>My Banko, is more than just a chatbot—it’s a step toward financial empowerment for underserved and remote communities.</p>
-            <!-- <div class="project-links">
-              <a href="#" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-              <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-            </div> -->
-          </div>
+        <div class="projects-cta">
+          <a href="/projects" class="btn card more-projects-btn" aria-label="See more projects">
+            <i class="fas fa-folder-open"></i>
+            <span>Click for more projects</span>
+          </a>
         </div>
-        <div class="project-card card"  data-aos-delay="100">
-          <div class="project-image">
-            <img src="/assets/project3.png" alt="StreakFit" loading="lazy" decoding="async">
-            <div class="project-overlay">
-              <div class="project-tech">
-                <span>HTML</span>
-                <span>•</span>
-                <span>CSS</span>
-                <span>•</span>
-                <span>JavaScript</span>
-              </div>
-            </div>
-          </div>
-          <div class="project-content">
-            <h3>StreakFit</h3>
-            <p>StreakFit is a fitness app that helps you stay motivated and achieve your fitness goals by tracking your workouts and progress.</p>
-            <div class="project-links">
-              <a href="https://github.com/Suryansh-asati/streakfit" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-              <a href="https://streakfit.vercel.app" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="projects-cta">
-        <a href="/projects" class="btn card more-projects-btn" aria-label="See more projects">
-          <i class="fas fa-folder-open"></i>
-          <span>Click for more projects</span>
-        </a>
-      </div>
-    </section>
+      </section>
     
   <!--Contact Section-->
     <section id="contact" class="contact fade-in">
