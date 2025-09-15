@@ -1,5 +1,5 @@
-# robots.txt for https://<your-domain>
+# robots.txt for https://gitdino.tech
 User-agent: *
 Allow: /
 
-Sitemap: https://<your-domain>/sitemap.xml
+Sitemap: https://gitdino.tech/sitemap.xml
