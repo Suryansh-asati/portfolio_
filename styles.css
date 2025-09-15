@@ -344,7 +344,7 @@ body {
     width: 100%;
 }
 
-.nav-links a.active { color: var(--background); background: var(--gfg-accent); padding: 0.25rem 0.5rem; border-radius: 8px; }
+.nav-links a.hover { color: var(--background); background: var(--gfg-accent); padding: 0.25rem 0.5rem; border-radius: 8px; }
 
 nav ul li a {
     color: var(--text-card-color);

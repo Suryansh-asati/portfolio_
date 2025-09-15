@@ -111,43 +111,83 @@ window.addEventListener('scroll', () => {
 });
 
 
-// Form Submission with Animation
+// Form Submission via backend API
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
-        
+
         const submitButton = this.querySelector('.submit-button');
         const originalText = submitButton.innerHTML;
-        
-        // Show loading state
+
         submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitButton.disabled = true;
-        
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
 
-        // Create mailto link with subject and body
-        const mailtoLink = `mailto:suryansh.asati1@gmail.com?subject=Portfolio Contact Form: ${name}&body=Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-        
-        // Open default email client
-        window.location.href = mailtoLink;
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
 
-        // Show success state
-        submitButton.innerHTML = '<i class="fas fa-check"></i> Email Client Opened!';
-        
-        // Reset form
-        contactForm.reset();
-        
-        // Reset button after 2 seconds
-        setTimeout(() => {
-            submitButton.innerHTML = originalText;
-            submitButton.disabled = false;
-        }, 2000);
+        try {
+            const resp = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message })
+            });
+            const data = await resp.json().catch(() => ({ ok: false, error: 'Invalid response' }));
+            if (resp.ok && data.ok) {
+                submitButton.innerHTML = '<i class="fas fa-check"></i> Message sent!';
+                contactForm.reset();
+            } else {
+                throw new Error(data.error || 'Failed to send');
+            }
+        } catch (err) {
+            submitButton.innerHTML = '<i class="fas fa-triangle-exclamation"></i> Try again';
+            console.error(err);
+        } finally {
+            setTimeout(() => { submitButton.innerHTML = originalText; submitButton.disabled = false; }, 2000);
+        }
     });
 }
+
+// Progressive enhancement: load projects dynamically on projects.html when available
+document.addEventListener('DOMContentLoaded', async () => {
+    const isProjectsPage = /\/projects\.html(\?|$)/.test(window.location.pathname);
+    if (!isProjectsPage) return;
+    const grid = document.querySelector('.project-grid');
+    if (!grid) return;
+    try {
+        const resp = await fetch('/api/projects');
+        const { projects } = await resp.json();
+        if (!Array.isArray(projects) || projects.length === 0) return;
+
+        // Clear existing grid and render from API
+        grid.innerHTML = '';
+        for (const p of projects) {
+            const card = document.createElement('div');
+            card.className = 'project-card card';
+            card.innerHTML = `
+                <div class="project-image">
+                    <img src="${p.image}" alt="${p.title}" loading="lazy" decoding="async">
+                    <div class="project-overlay">
+                        <div class="project-tech">
+                            ${(p.tags || []).map(t => `<span>${t}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>${p.title}</h3>
+                    <p>${p.description || ''}</p>
+                    <div class="project-links">
+                        ${p.links?.github ? `<a href="${p.links.github}" class="project-link"><i class="fab fa-github"></i> GitHub</a>` : ''}
+                        ${p.links?.live ? `<a href="${p.links.live}" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>` : ''}
+                    </div>
+                </div>`;
+            grid.appendChild(card);
+        }
+    } catch (e) {
+        console.warn('Failed to load projects from API', e);
+    }
+});
 
 
 

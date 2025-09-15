@@ -1,0 +1,32 @@
+[
+  {
+    "id": "well-being-hub",
+    "title": "Well-Being-Hub",
+    "description": "The one-step solution to get relief from your stress. Live a stress-free life!",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "image": "/assets/project1.png",
+    "links": {
+      "github": "https://github.com/Suryansh-asati/Well-Being-Hub",
+      "live": "https://suryansh-asati.github.io/Well-Being-Hub/"
+    }
+  },
+  {
+    "id": "my-banko",
+    "title": "My Banko App",
+    "description": "A chatbot-based app toward financial empowerment for underserved and remote communities.",
+    "tags": ["Flutter", "Firebase", "Botpress", "Pathway"],
+    "image": "/assets/project2.jpg",
+    "links": {}
+  },
+  {
+    "id": "streakfit",
+    "title": "StreakFit",
+    "description": "Stay motivated and achieve your fitness goals by tracking your workouts and progress.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "image": "/assets/project3.png",
+    "links": {
+      "github": "https://github.com/Suryansh-asati/streakfit",
+      "live": "https://streakfit.vercel.app"
+    }
+  }
+]
