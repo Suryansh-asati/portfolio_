@@ -76,7 +76,7 @@ body {
 [data-theme="light"] body, [data-theme="light"] .big-ol-gradient-2 { background: var(--big-ol-gradient-2); color: var(--text-color); }
 [data-theme="light"] .navbar { background: rgba(255, 255, 255, 0.75); border-color: rgba(20, 195, 142, 0.25); box-shadow: 0 2px 18px rgba(0,0,0,0.06), 0 0 0 1px rgba(20,195,142,0.08) inset; }
 [data-theme="light"] .nav-links a { color: #145c3f; }
-[data-theme="light"] .nav-links a.hover { color: #fff; background: #14c38e; }
+[data-theme="light"] .nav-links a.hover { color: #000000; background: #14c38e; }
 [data-theme="light"] .resume-btn { color: #145c3f !important; border-color: rgba(20,195,142,0.35); }
 [data-theme="light"] .cta-button { color: #145c3f; border-color: rgba(20,195,142,0.35); }
 [data-theme="light"] .about { background: var(--gradient-border); }
