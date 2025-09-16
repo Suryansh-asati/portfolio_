@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Suryansh</title>
+  <meta name="description" content="Explore more projects by Suryansh Asati: web apps, UI experiments, and tools.">
+  <link rel="canonical" id="canonical-link" href="/projects">
+  <meta name="theme-color" content="#0d1a14">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projects — Suryansh">
+  <meta property="og:description" content="Explore more projects by Suryansh Asati.">
+  <meta property="og:url" id="og-url" content="/projects">
+  <meta property="og:image" content="/assets/pfp.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projects — Suryansh">
+  <meta name="twitter:description" content="Explore more projects by Suryansh Asati.">
+  <meta name="twitter:image" content="/assets/pfp.jpg">
+
+  <link rel="icon" type="image/x-icon" href="/assets/sa-favicon.svg">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="big-ol-gradient-2">
+  <nav class="navbar">
+    <div class="logo"><a href="/"><p>Portfolio</p></a></div>
+    <ul class="nav-links">
+      <li><a href="/#home">Home</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="/#resume">Resume</a></li>
+      <li><a class="active" href="/projects">Projects</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="/assets/Suryansh-Resume.pdf" class="resume-btn btn" download><i class="fas fa-download"></i> Resume</a></li>
+      <li>
+        <button class="theme-toggle btn" aria-label="Toggle theme" title="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+      </li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
+  <main class="projects fade-in" style="padding-top: 6rem;">
+    <h1 class="section-title">All Projects</h1>
+
+    <div class="project-grid">
+      <% (projects || []).forEach(function(p){ %>
+      <div class="project-card card">
+        <div class="project-image">
+          <img src="<%= p.image %>" alt="<%= p.title %>" loading="lazy" decoding="async">
+          <div class="project-overlay">
+            <div class="project-tech">
+              <% (p.tags || []).forEach(function(t){ %>
+                <span><%= t %></span>
+              <% }) %>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3><%= p.title %></h3>
+          <p><%= p.description || '' %></p>
+          <div class="project-links">
+            <% if (p.links && p.links.github) { %>
+              <a href="<%= p.links.github %>" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+            <% } %>
+            <% if (p.links && p.links.live) { %>
+              <a href="<%= p.links.live %>" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+    <div class="projects-cta" style="margin-top: 2rem;">
+      <a href="/#projects" class="btn card"><i class="fas fa-arrow-left"></i> Back to home</a>
+    </div>
+  </main>
+
+  <footer class="fade-in" style="margin-top: 4rem;">
+    <div class="below-form">
+      <h3>Also connect with me at:</h3>
+      <div class="footer-links-list">
+        <a class="footer-link-row" href="https://linkedin.com/in/suryansh-asati" target="_blank" rel="noopener">
+          <span class="row-label">LinkedIn</span>
+          <span class="row-arrow">↗</span>
+          <div class="row-marquee" aria-hidden="true">
+            <div class="ticker">
+              <div class="ticker__track">
+                <span>LINKEDIN</span><span>↗</span><span>LINKEDIN</span><span>↗</span><span>LINKEDIN</span><span>↗</span><span>LINKEDIN</span><span>↗</span>
+              </div>
+              <div class="ticker__track" aria-hidden="true">
+                <span>LINKEDIN</span><span>↗</span><span>LINKEDIN</span><span>↗</span><span>LINKEDIN</span><span>↗</span><span>LINKEDIN</span><span>↗</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="footer-link-row" href="https://www.github.com/suryansh-asati" target="_blank" rel="noopener">
+          <span class="row-label">GitHub</span>
+          <span class="row-arrow">↗</span>
+          <div class="row-marquee" aria-hidden="true">
+            <div class="ticker">
+              <div class="ticker__track">
+                <span>GITHUB</span><span>↗</span><span>GITHUB</span><span>↗</span><span>GITHUB</span><span>↗</span><span>GITHUB</span><span>↗</span>
+              </div>
+              <div class="ticker__track" aria-hidden="true">
+                <span>GITHUB</span><span>↗</span><span>GITHUB</span><span>↗</span><span>GITHUB</span><span>↗</span><span>GITHUB</span><span>↗</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="footer-link-row" href="https://www.instagram.com/suryansh.asati/" target="_blank" rel="noopener">
+          <span class="row-label">Instagram</span>
+          <span class="row-arrow">↗</span>
+          <div class="row-marquee" aria-hidden="true">
+            <div class="ticker">
+              <div class="ticker__track">
+                <span>INSTAGRAM</span><span>↗</span><span>INSTAGRAM</span><span>↗</span><span>INSTAGRAM</span><span>↗</span><span>INSTAGRAM</span><span>↗</span>
+              </div>
+              <div class="ticker__track" aria-hidden="true">
+                <span>INSTAGRAM</span><span>↗</span><span>INSTAGRAM</span><span>↗</span><span>INSTAGRAM</span><span>↗</span><span>INSTAGRAM</span><span>↗</span>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a class="footer-link-row" href="mailto:suryansh.asati1@gmail.com" target="_blank" rel="noopener">
+          <span class="row-label">Email</span>
+          <span class="row-arrow">↗</span>
+          <div class="row-marquee" aria-hidden="true">
+            <div class="ticker">
+              <div class="ticker__track">
+                <span>EMAIL</span><span>↗</span><span>EMAIL</span><span>↗</span><span>EMAIL</span><span>↗</span><span>EMAIL</span><span>↗</span>
+              </div>
+              <div class="ticker__track" aria-hidden="true">
+                <span>EMAIL</span><span>↗</span><span>EMAIL</span><span>↗</span><span>EMAIL</span><span>↗</span><span>EMAIL</span><span>↗</span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="fade-in footer-text">
+      <i>"Make everyday worth it"</i>
+    </div>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script src="/script.js" defer></script>
+</body>
+</html>

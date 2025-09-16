@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suryansh's Portfolio</title>
+        <meta name="description" content="Portfolio of Suryansh Asati — developer and designer. Explore projects, skills, and experience.">
+        <link rel="canonical" id="canonical-link" href="/">
+        <meta name="theme-color" content="#0d1a14">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Suryansh's Portfolio">
+        <meta property="og:description" content="Developer portfolio: projects, skills, and experience.">
+        <meta property="og:url" id="og-url" content="/">
+        <meta property="og:image" content="/assets/pfp.jpg">
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Suryansh's Portfolio">
+        <meta name="twitter:description" content="Developer portfolio: projects, skills, and experience.">
+        <meta name="twitter:image" content="/assets/pfp.jpg">
+
+        <!-- JSON-LD Structured Data -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Person",
+          "name": "Suryansh Asati",
+          "url": "/",
+          "image": "/assets/pfp.jpg",
+          "sameAs": [
+            "https://linkedin.com/in/suryansh-asati",
+            "https://github.com/Suryansh-asati",
+            "https://instagram.com/suryansh.asati"
+          ],
+          "jobTitle": "Developer"
+        }
+        </script>
+    <link rel="icon" type="image/x-icon" href="/assets/sa-favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="/assets/pfp.jpg" imagesrcset="/assets/pfp.jpg 1x" fetchpriority="high">
+  </head>
+  <body class="big-ol-gradient-2 loading " id="main">
+    <div class="loader" id="load">
+      <span></span>
+    </div>
+    <!-- From Uiverse.io by jeremyssocial --> 
+    <!-- <div class="container-bg"></div> -->
+
+    <div id="cursor-indicator"></div>
+    <div class="cursor-outline"></div>
+
+    <nav class="navbar ">
+      <!-- <div class="container"></div> -->
+      <div class="logo"><a href="/index.html">
+        <!-- <img src="/assets/sa-favicon.svg" alt="Suryansh's Portfolio"> -->
+        <p>Portfolio</p>
+      </a></div>
+      <ul class="nav-links">
+        <!-- <div class="container"></div> -->
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="/assets/Suryansh-Resume.pdf" class="resume-btn btn" download><i class="fas fa-download"></i> Resume</a></li>
+        <li>
+          <button class="theme-toggle btn" aria-label="Toggle theme" title="Toggle theme">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>    
+    <section id="home" class="hero fade-in">
+      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <!-- <div class="container"></div> -->
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="textshine-animation">Hello, this is Suryansh</h1>
+          <p class="textshine-animation">I'm a passionate developer creating amazing digital experiences</p>
+          <a href="#contact" class="cta-button fade-in btn card">Get in Touch</a>
+        </div>
+        <div class="profile-upload ">
+          <img src="/assets/pfp.jpg" alt="Profile Picture" id="profile-preview" class="profile-picture" loading="eager" fetchpriority="high" decoding="async" />
+          <div class="profile-overlay">
+            <ul class="example-2">
+            <li class="icon-content p01">
+              <a href="https://linkedin.com/in/suryansh-asati" target="_blank" aria-label="LinkedIn" data-social="linkedin" rel="noopener">
+                <div class="filled"></div>
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="16"  height="16"  fill="currentColor"  class="bi bi-linkedin"  viewBox="0 0 16 16"  xml:space="preserve">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" fill="currentColor"></path>
+                </svg>
+              </a>
+              <div class="tooltip">LinkedIn</div>
+            </li>
+            <li class="icon-content p02">
+              <a href="https://www.github.com/suryansh-asati" aria-label="GitHub" data-social="github" target="_blank"rel="noopener">
+                <div class="filled"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" xml:space="preserve">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" fill="currentColor"></path>
+                </svg>
+              </a>
+              <div class="tooltip">GitHub</div>
+            </li>
+            <li class="icon-content p03">
+              <a href="https://www.instagram.com/suryansh.asati/" aria-label="Instagram" data-social="instagram" target="_blank" rel="noopener">
+                <div class="filled"></div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16" xml:space="preserve">
+                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" fill="currentColor"></path>
+                </svg>
+              </a>
+              <div class="tooltip">Instagram</div>
+            </li>
+            <li class="icon-content p04">
+            <a href="mailto:suryansh.asati1@gmail.com" aria-label="Email" data-social="email" target="_blank" rel="noopener">
+              <div class="filled"></div>
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48">
+                  <path fill="currentColor" d="M45,16.2l-5,2.75l-5,4.75L35,40h7c1.657,0,3-1.343,3-3V16.2z"></path>
+                  <path fill="currentColor" d="M3,16.2l3.614,1.71L13,23.7V40H6c-1.657,0-3-1.343-3-3V16.2z"></path>
+                  <polygon fill="currentColor" points="35,11.2 24,19.45 13,11.2 12,17 13,23.7 24,31.95 35,23.7 36,17"></polygon>
+                  <path fill="currentColor" d="M3,12.298V16.2l10,7.5V11.2L9.876,8.859C9.132,8.301,8.228,8,7.298,8h0C4.924,8,3,9.924,3,12.298z"></path>
+                  <path fill="currentColor" d="M45,12.298V16.2l-10,7.5V11.2l3.124-2.341C38.868,8.301,39.772,8,40.702,8h0C43.076,8,45,9.924,45,12.298z"></path>
+              </svg>
+            </a>
+            <div class="tooltip">Gmail</div>
+            </li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- GFG-style marquee scroller -->
+    <section class="marquee" aria-hidden="true">
+      <div class="ticker">
+        <div class="ticker__track">
+          <span>LEARN</span>
+          <span>•</span>
+          <span>BUILD</span>
+          <span>•</span>
+          <span>INNOVATE</span>
+          <span>•</span>
+          <span>LEARN</span>
+          <span>•</span>
+          <span>BUILD</span>
+          <span>•</span>
+          <span>INNOVATE</span>
+          <span>•</span>
+        </div>
+        <div class="ticker__track" aria-hidden="true">
+          <span>LEARN</span>
+          <span>•</span>
+          <span>BUILD</span>
+          <span>•</span>
+          <span>INNOVATE</span>
+          <span>•</span>
+          <span>LEARN</span>
+          <span>•</span>
+          <span>BUILD</span>
+          <span>•</span>
+          <span>INNOVATE</span>
+          <span>•</span>
+        </div>
+      </div>
+    </section>
+    
+  <section id="about" class="about fade-in card">
+      <div class="container-black"></div>
+      <div class="abouts">
+      <h2 class="scroll-animate section-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-flex-container">
+          <!-- <div class="about-image">
+            <img src="/assets/download.svg" alt="Programing Languages" class="about-laptop-img">
+          </div> -->
+          <div class="about-text">
+            <h4>--Hello! I'm Suryansh, a creative developer with a passion for building beautiful and functional websites. I love turning ideas into reality through code.</h4><br>
+            <h4>--With a background in Computer Science and Engineering, I bring a unique perspective to my work. I'm passionate about creating intuitive and user-friendly interfaces, and I love solving complex problems through code.</h4><br>
+            <h4>--Currently I'm learning JavaScript and it's frameworks, focusing on my journey as a Web Development Engineer.</h4>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  <section class="skills-section fade-in about-content" id="skills">
+      <div class="skills fade-in">
+          <h3 class="section-title">Skills</h3>
+          <!-- Programming languages marquee using same ticker system -->
+          <div class="skills-marquee marquee" aria-label="Programming languages marquee">
+            <div class="ticker">
+              <div class="ticker__track">
+                <span>HTML</span>
+                <span>•</span>
+                <span>CSS</span>
+                <span>•</span>
+                <span>JavaScript</span>
+                <span>•</span>
+                <span>TypeScript</span>
+                <span>•</span>
+                <span>Python</span>
+                <span>•</span>
+                <span>Java</span>
+                <span>•</span>
+                <span>C</span>
+                <span>•</span>
+                <span>C++</span>
+                <span>•</span>
+                <span>SQL</span>
+                <span>•</span>
+                <span>Node.js</span>
+                <span>•</span>
+                <span>React</span>
+              </div>
+              <div class="ticker__track" aria-hidden="true">
+                <span>HTML</span>
+                <span>•</span>
+                <span>CSS</span>
+                <span>•</span>
+                <span>JavaScript</span>
+                <span>•</span>
+                <span>TypeScript</span>
+                <span>•</span>
+                <span>Python</span>
+                <span>•</span>
+                <span>Java</span>
+                <span>•</span>
+                <span>C</span>
+                <span>•</span>
+                <span>C++</span>
+                <span>•</span>
+                <span>SQL</span>
+                <span>•</span>
+                <span>Node.js</span>
+                <span>•</span>
+                <span>React</span>
+              </div>
+            </div>
+          </div>
+          <ul class="skills-grid fade-in">
+            <li class="skill-item card"  data-aos-delay="100">
+              <i class="fab fa-html5"></i>
+              <span>HTML5</span>
+            </li>
+            <li class="skill-item card">
+              <i class="fab fa-css3-alt"></i>
+              <span>CSS3</span>
+            </li>
+            <li class="skill-item card">
+              <i class="fab fa-js"></i>
+              <span>JavaScript</span>
+            </li>
+            <li class="skill-item card">
+              <i class="fab fa-c"></i>
+              <span>C/C++</span>
+            </li>
+          </ul>
+        </div>
+        <!-- Icon ticker removed in favor of languages marquee -->
+        <div class="skills fade-in">
+          <h3 class="section-title">Learning Docket</h3>
+          <!-- Learning Docket marquee using same ticker system -->
+          <div class="skills-marquee marquee docket-marquee" aria-label="Learning Docket marquee">
+            <div class="ticker">
+              <div class="ticker__track">
+                <span>Python</span>
+                <span>•</span>
+                <span>Figma</span>
+                <span>•</span>
+                <span>React</span>
+                <span>•</span>
+                <span>Java</span>
+                <span>•</span>
+                <span>Bootstrap</span>
+                <span>•</span>
+                <span>Node.js</span>
+              </div>
+              <div class="ticker__track" aria-hidden="true">
+                <span>Python</span>
+                <span>•</span>
+                <span>Figma</span>
+                <span>•</span>
+                <span>React</span>
+                <span>•</span>
+                <span>Java</span>
+                <span>•</span>
+                <span>Bootstrap</span>
+                <span>•</span>
+                <span>Node.js</span>
+              </div>
+            </div>
+          </div>
+          <ul class="skills-grid">
+            <li class="skill-item card">
+              <i class="fab fa-python"></i>
+              <span>Python</span>
+            </li>
+            <li class="skill-item card">
+              <i class="fab fa-figma"></i>
+              <span>Figma</span>
+            </li>
+            <li class="skill-item card">
+              <i class="fab fa-react"></i>
+              <span>React</span>
+            </li>
+            <li class="skill-item card">
+              <i class="fab fa-java"></i>
+              <span>Java</span>
+            </li>
+            <li class="skill-item card">
+              <i class="fab fa-bootstrap"></i>
+              <span>Bootstrap</span>
+            </li>
+            <li class="skill-item card">
+              <i class="fab fa-node-js"></i>
+              <span>Node Js</span>
+            </li>
+          </ul>
+        </div>
+      <!-- After Learning Docket section -->
+        <div class="resume-section fade-in " id="resume">
+          <h2 class="section-title">My Resume</h2>
+        <!--Education Section Resume-->
+          <section class="timeline card">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+              <h3 class="title-icon">Education</h3>
+            </div>
+            <ul class="timeline-list">
+              <li class="timeline-item">
+                <a href="https://www.littleworldschool.org/"><h4 class="h4 timeline-item-title">Little World School</h4></a>
+                <span>2011 — 2023</span>
+                <p class="timeline-text">High School Diploma.</p>
+              </li>
+              <li class="timeline-item">
+                <a href="https://ggits.org/"><h4 class="h4 timeline-item-title">Gyan Ganga Institute of Technology & Sciences</h4></a>
+                <span>2023 — 2027</span>
+                <p class="timeline-text">Under Graduation in Computer Science and Engineering</p>
+              </li>
+            </ul>
+          </section>
+        <!--Experience Section Resume-->
+          <section class="timeline card">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="briefcase-outline"></ion-icon>
+              </div>
+              <h3 class="title-icon">Experience</h3>
+            </div>
+            <ul class="timeline-list">
+              <li class="timeline-item">
+                <a href="https://ecell.ggits.org/"><h4 class="h4 timeline-item-title">Graphic and Designing Team Udyam E-cell 2024-25</h4></a>
+                <span>September 2024 - January 2025 </span>
+                <p class="timeline-text">Contributed to the design and development of promotional materials, enhancing the visibility and outreach of the e-cell's initiatives.</p>
+              </li>
+              <li class="timeline-item">
+                <a href="https://gfg.ggits.org"><h4 class="h4 timeline-item-title">Geeks For Geeks Student Chapter-GGITS - Graphic and Design Lead</h4></a>
+                <span>May 2025 - Present </span>
+                <p class="timeline-text">Made posters and social media posts for various events, enhancing the chapter's online presence and engagement.</p>
+              </li>
+            </ul>
+          </section>
+          <p>Want to know more about my experience and qualifications?</p>
+          <a href="/assets/Suryansh-Resume.pdf" class="resume-download-btn btn card" download>
+            <i class="fas fa-file-download"></i>
+            Download Resume
+          </a>
+        </div>
+    </section>
+    
+  <!--Project Section-->
+    <section id="projects" class="projects fade-in">
+        <h2 class="section-title">My Projects</h2>
+        <div class="project-grid">
+          <% (projects || []).slice(0, 6).forEach(function(p) { %>
+            <div class="project-card card" data-aos-delay="100">
+              <div class="project-image">
+                <img src="<%= p.image %>" alt="<%= p.title %>" loading="lazy" decoding="async">
+                <div class="project-overlay">
+                  <div class="project-tech">
+                    <% (p.tags || []).forEach(function(t, i){ %>
+                      <span><%= t %></span>
+                      <% if (i < (p.tags.length - 1)) { %><span>•</span><% } %>
+                    <% }) %>
+                  </div>
+                </div>
+              </div>
+              <div class="project-content">
+                <h3><%= p.title %></h3>
+                <p><%= p.description || '' %></p>
+                <div class="project-links">
+                  <% if (p.links && p.links.github) { %>
+                    <a href="<%= p.links.github %>" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                  <% } %>
+                  <% if (p.links && p.links.live) { %>
+                    <a href="<%= p.links.live %>" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+        <div class="projects-cta">
+          <a href="/projects" class="btn card more-projects-btn" aria-label="See more projects">
+            <i class="fas fa-folder-open"></i>
+            <span>Click for more projects</span>
+          </a>
+        </div>
+      </section>
+    
+  <!--Contact Section-->
+    <section id="contact" class="contact fade-in">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-content fade-in"  data-aos-delay="200">
+        <form id="contact-form" netlify>
+          <div class="form-group">
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+          </div> 
+          <div class="form-group">
+            <input type="email" id="email" name="email" required placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+          </div>
+          <button type="submit" class="submit-button fade-in btn card">
+            <div class="submitbtn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane plane"></i>
+            </div>
+          </button>
+        </form>
+      </div>
+    </section>
+  <!--Footer Section-->
+    <footer class="fade-in ">
+      <!-- <div class="container"></div> -->
+      <div class="below-form"  data-aos-delay="200">
+        <h3  data-aos-delay="200">Also connect with me at:</h3>
+                
+        <!-- Footer link rows with hover marquee like reference site -->
+        <div class="footer-links-list">
+          <a class="footer-link-row" href="https://linkedin.com/in/suryansh-asati" target="_blank" rel="noopener">
+            <span class="row-label">LinkedIn</span>
+            <span class="row-arrow">↗</span>
+            <div class="row-marquee" aria-hidden="true">
+              <div class="ticker">
+                <div class="ticker__track">
+                  <span>LINKEDIN</span><span>↗</span>
+                  <span>LINKEDIN</span><span>↗</span>
+                  <span>LINKEDIN</span><span>↗</span>
+                  <span>LINKEDIN</span><span>↗</span>
+                </div>
+                <div class="ticker__track" aria-hidden="true">
+                  <span>LINKEDIN</span><span>↗</span>
+                  <span>LINKEDIN</span><span>↗</span>
+                  <span>LINKEDIN</span><span>↗</span>
+                  <span>LINKEDIN</span><span>↗</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="footer-link-row" href="https://www.github.com/suryansh-asati" target="_blank" rel="noopener">
+            <span class="row-label">GitHub</span>
+            <span class="row-arrow">↗</span>
+            <div class="row-marquee" aria-hidden="true">
+              <div class="ticker">
+                <div class="ticker__track">
+                  <span>GITHUB</span><span>↗</span>
+                  <span>GITHUB</span><span>↗</span>
+                  <span>GITHUB</span><span>↗</span>
+                  <span>GITHUB</span><span>↗</span>
+                </div>
+                <div class="ticker__track" aria-hidden="true">
+                  <span>GITHUB</span><span>↗</span>
+                  <span>GITHUB</span><span>↗</span>
+                  <span>GITHUB</span><span>↗</span>
+                  <span>GITHUB</span><span>↗</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="footer-link-row" href="https://www.instagram.com/suryansh.asati/" target="_blank" rel="noopener">
+            <span class="row-label">Instagram</span>
+            <span class="row-arrow">↗</span>
+            <div class="row-marquee" aria-hidden="true">
+              <div class="ticker">
+                <div class="ticker__track">
+                  <span>INSTAGRAM</span><span>↗</span>
+                  <span>INSTAGRAM</span><span>↗</span>
+                  <span>INSTAGRAM</span><span>↗</span>
+                  <span>INSTAGRAM</span><span>↗</span>
+                </div>
+                <div class="ticker__track" aria-hidden="true">
+                  <span>INSTAGRAM</span><span>↗</span>
+                  <span>INSTAGRAM</span><span>↗</span>
+                  <span>INSTAGRAM</span><span>↗</span>
+                  <span>INSTAGRAM</span><span>↗</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a class="footer-link-row" href="mailto:suryansh.asati1@gmail.com" target="_blank" rel="noopener">
+            <span class="row-label">Email</span>
+            <span class="row-arrow">↗</span>
+            <div class="row-marquee" aria-hidden="true">
+              <div class="ticker">
+                <div class="ticker__track">
+                  <span>EMAIL</span><span>↗</span>
+                  <span>EMAIL</span><span>↗</span>
+                  <span>EMAIL</span><span>↗</span>
+                  <span>EMAIL</span><span>↗</span>
+                </div>
+                <div class="ticker__track" aria-hidden="true">
+                  <span>EMAIL</span><span>↗</span>
+                  <span>EMAIL</span><span>↗</span>
+                  <span>EMAIL</span><span>↗</span>
+                  <span>EMAIL</span><span>↗</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="fade-in footer-text">
+        <i>"Make everyday worth it"</i>
+      </div>
+    </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script src="/script.js" defer></script>
+  </body>
+  </html>
+
