@@ -1,3 +1,15 @@
+// Determine API base URL based on hostname
+const getApiBaseUrl = () => {
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        // Use local server during development
+        return 'http://localhost:3000'; 
+    } else {
+        // Use production backend URL
+        return 'https://portfolio-production-86b6.up.railway.app/'; // <-- IMPORTANT: Replace with your actual Railway URL
+    }
+};
+const API_BASE_URL = getApiBaseUrl();
+
 // Initialize AOS (Animate On Scroll) if available
 if (window.AOS) {
     window.AOS.init({ duration: 800, once: true, offset: 100 });
@@ -128,7 +140,7 @@ if (contactForm) {
         const message = document.getElementById('message').value.trim();
 
         try {
-            const resp = await fetch('/api/contact', {
+            const resp = await fetch(`${API_BASE_URL}/api/contact`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, email, message })
@@ -156,7 +168,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const grid = document.querySelector('.project-grid');
     if (!grid) return;
     try {
-        const resp = await fetch('/api/projects');
+        const resp = await fetch(`${API_BASE_URL}/api/projects`);
         const { projects } = await resp.json();
         if (!Array.isArray(projects) || projects.length === 0) return;
 

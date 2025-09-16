@@ -32,7 +32,35 @@ app.set('views', [
 app.use(helmet({
   contentSecurityPolicy: false // keep simple; can be tightened later
 }));
-app.use(cors());
+
+// CORS: Allow requests from the frontend URL and handle Vercel previews
+const corsOptions = {
+  origin: (origin, callback) => {
+    const frontendUrl = process.env.FRONTEND_URL || SITE_URL;
+    const allowlist = [frontendUrl];
+    if (!IS_PROD) {
+      // Allow common dev origins
+      allowlist.push('http://localhost:5500', 'http://127.0.0.1:5500');
+    }
+    
+    // Allow Vercel preview deployments
+    if (origin && (origin.endsWith('.vercel.app') || allowlist.includes(origin))) {
+      return callback(null, true);
+    }
+    
+    // Allow requests with no origin (like Postman, mobile apps) in non-prod
+    if (!origin && !IS_PROD) {
+        return callback(null, true);
+    }
+
+    if (!origin) {
+        return callback(new Error('Not allowed by CORS: No origin specified.'));
+    }
+
+    callback(new Error(`Not allowed by CORS: ${origin}`));
+  }
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan('tiny'));
 
