@@ -273,21 +273,41 @@ highlightActiveNavLink();
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     let dpr = Math.max(1, Math.min(2, window.devicePixelRatio || 1));
-    let width = 0, height = 0;
+    let width = 1, height = 1;
     const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
     let reduceMotion = prefersReduced ? prefersReduced.matches : false;
 
+    const container = canvas.parentElement || canvas;
+
     function resize() {
-        const rect = canvas.getBoundingClientRect();
-        width = Math.floor(rect.width);
-        height = Math.floor(rect.height);
-        canvas.width = Math.floor(width * dpr);
-        canvas.height = Math.floor(height * dpr);
+        const rect = (container.getBoundingClientRect ? container.getBoundingClientRect() : canvas.getBoundingClientRect());
+        // Fallback to viewport if layout not ready yet
+        const rectWidth = Math.max(1, Math.floor(rect.width || window.innerWidth));
+        const rectHeight = Math.max(1, Math.floor(rect.height || Math.floor(window.innerHeight * 0.6)));
+        width = rectWidth;
+        height = rectHeight;
+        // Mirror CSS size to avoid visual scaling glitches
+        canvas.style.width = rectWidth + 'px';
+        canvas.style.height = rectHeight + 'px';
+        // Set drawing buffer considering DPR
+        canvas.width = Math.floor(rectWidth * dpr);
+        canvas.height = Math.floor(rectHeight * dpr);
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
-    resize();
-    window.addEventListener('resize', resize);
+    // React to layout/size changes of the container
+    if (window.ResizeObserver) {
+        const ro = new ResizeObserver(() => {
+            resize();
+            initParticles();
+        });
+        ro.observe(container);
+    } else {
+        window.addEventListener('resize', () => {
+            resize();
+            initParticles();
+        });
+    }
 
     const colors = {
         dark: ['#00e676', '#2f8d46', 'rgba(0,230,118,0.25)'],
@@ -327,8 +347,14 @@ highlightActiveNavLink();
             r: Math.random() * 1.8 + 0.6
         }));
     }
-    initParticles();
-    window.addEventListener('resize', initParticles);
+    // Initialize particles after we ensure a valid size
+    const kickoff = () => {
+        resize();
+        initParticles();
+        (window.requestIdleCallback || window.requestAnimationFrame)(step);
+    };
+    // Defer kickoff to next frame(s) so CSS/layout are settled
+    requestAnimationFrame(() => requestAnimationFrame(kickoff));
 
     function step() {
         const [c1, c2, glow] = currentPalette();
@@ -407,7 +433,7 @@ highlightActiveNavLink();
 
         requestAnimationFrame(step);
     }
-    (window.requestIdleCallback || window.requestAnimationFrame)(step);
+    // step() is started in kickoff()
 })();
 
 // Update canonical and og:url at runtime to absolute URL (useful on Vercel preview/production)

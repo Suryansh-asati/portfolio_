@@ -56,27 +56,32 @@
 
     <div class="project-grid">
       <% (projects || []).forEach(function(p){ %>
-      <div class="project-card card">
-        <div class="project-image">
-          <img src="<%= p.image %>" alt="<%= p.title %>" loading="lazy" decoding="async">
-          <div class="project-overlay">
-            <div class="project-tech">
-              <% (p.tags || []).forEach(function(t){ %>
-                <span><%= t %></span>
-              <% }) %>
+      <div class="project-card card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <div class="project-image">
+              <img src="<%= p.image %>" alt="<%= p.title %>" loading="lazy" decoding="async">
             </div>
+            <div class="front-title"><h3><%= p.title %></h3></div>
           </div>
-        </div>
-        <div class="project-content">
-          <h3><%= p.title %></h3>
-          <p><%= p.description || '' %></p>
-          <div class="project-links">
-            <% if (p.links && p.links.github) { %>
-              <a href="<%= p.links.github %>" class="project-link"><i class="fab fa-github"></i> GitHub</a>
-            <% } %>
-            <% if (p.links && p.links.live) { %>
-              <a href="<%= p.links.live %>" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-            <% } %>
+          <div class="flip-back">
+            <div class="project-content">
+              <h3><%= p.title %></h3>
+              <p><%= p.description || '' %></p>
+              <div class="project-tech">
+                <% (p.tags || []).forEach(function(t){ %>
+                  <span><%= t %></span>
+                <% }) %>
+              </div>
+              <div class="project-links">
+                <% if (p.links && p.links.github) { %>
+                  <a href="<%= p.links.github %>" class="project-link"><i class="fab fa-github"></i> GitHub</a>
+                <% } %>
+                <% if (p.links && p.links.live) { %>
+                  <a href="<%= p.links.live %>" class="project-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                <% } %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
