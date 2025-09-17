@@ -1,0 +1,25 @@
+{
+  "name": "express",
+  "private": true,
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "dev:node": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "5.1.0",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.9.15",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/express": "5.0.0",
+    "@types/node": "20.11.17",
+    "tsx": "4.19.1",
+    "typescript": "5.8.3"
+  }
+}
