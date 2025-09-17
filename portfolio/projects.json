@@ -1,0 +1,44 @@
+[  
+  {
+    "id": "streakfit",
+    "title": "StreakFit",
+    "description": "Stay motivated and achieve your fitness goals by tracking your workouts and progress.",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "image": "/assets/project3.png",
+    "links": {
+      "github": "https://github.com/Suryansh-asati/streakfit",
+      "live": "https://streakfit.vercel.app"
+    }
+  },
+  {
+  "id": "resqverse",
+  "title": "ResQverse",
+  "description": "A disaster preparedness and response education system designed for schools and colleges, helping institutions train students and staff through interactive tools and simulations.",
+  "tags": ["HTML", "CSS", "JavaScript", "Node.js"],
+  "image": "/assets/project4.png",
+  "links": {
+    "github": "https://github.com/Suryansh-asati/resqverse",
+    "live": "https://resqverse.onrender.com"
+  }
+  },
+  {
+    "id": "well-being-hub",
+    "title": "Well-Being-Hub",
+    "description": "The one-step solution to get relief from your stress. Live a stress-free life!",
+    "tags": ["HTML", "CSS", "JavaScript"],
+    "image": "/assets/project1.png",
+    "links": {
+      "github": "https://github.com/Suryansh-asati/Well-Being-Hub",
+      "live": "https://suryansh-asati.github.io/Well-Being-Hub/"
+    }
+  },
+  {
+    "id": "my-banko",
+    "title": "My Banko App",
+    "description": "A chatbot-based app toward financial empowerment for underserved and remote communities.",
+    "tags": ["Flutter", "Firebase", "Botpress", "Pathway"],
+    "image": "/assets/project2.jpg",
+    "links": {}
+  }
+
+]
