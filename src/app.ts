@@ -5,7 +5,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 import { z } from 'zod';
 import 'dotenv/config';
 
@@ -67,29 +67,18 @@ export function createApp() {
     _hp: z.string().optional(),
   });
 
-  function buildTransport() {
-    if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
-      return nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: Number(process.env.SMTP_PORT || 587),
-        secure: false,
-        auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS },
-      });
-    }
-    return null;
-  }
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   app.post('/api/contact', async (req, res) => {
     try {
       const data = ContactSchema.parse(req.body);
       if (data._hp) return res.status(200).json({ ok: true });
 
-      const from = process.env.EMAIL_FROM || process.env.SMTP_USER || '';
-      const to = process.env.EMAIL_TO || process.env.SMTP_USER || '';
-      const transport = buildTransport();
-      if (!transport || !from || !to) {
+      const from = process.env.EMAIL_FROM || '';
+      const to = process.env.EMAIL_TO || '';
+      if (!process.env.RESEND_API_KEY || !from || !to) {
         if (!IS_PROD) {
-          console.log('[contact] Email transport not configured. Dev mode: simulating success.');
+          console.log('[contact] Resend not configured. Dev mode: simulating success.');
           return res.json({ ok: true, simulated: true });
         }
         return res.status(500).json({ ok: false, error: 'Email transport not configured' });
@@ -97,7 +86,7 @@ export function createApp() {
 
       const subject = `Portfolio contact from ${data.name}`;
       const text = `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`;
-      await transport.sendMail({ from, to, subject, text });
+      await resend.emails.send({ from, to, subject, text, replyTo: data.email });
       res.json({ ok: true });
     } catch (err: any) {
       if (err instanceof z.ZodError) {
