@@ -7,6 +7,7 @@
         <meta name="description" content="Portfolio of Suryansh Asati — developer and designer. Explore projects, skills, and experience.">
         <link rel="canonical" id="canonical-link" href="/">
         <meta name="theme-color" content="#0d1a14">
+        <meta name="google-site-verification" content="dTlUGQ0yv1Vtk0imOmmxC2tOTHjRsJpwfoqYexaUUOw" />
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
@@ -54,8 +55,8 @@
     <!-- From Uiverse.io by jeremyssocial --> 
     <!-- <div class="container-bg"></div> -->
 
-    <!-- <div id="cursor-indicator"></div>
-    <div class="cursor-outline"></div> -->
+    <div id="cursor-indicator"></div>
+    <div class="cursor-outline"></div>
 
     <nav class="navbar ">
       <!-- <div class="container"></div> -->
@@ -70,7 +71,7 @@
         <li><a href="#resume">Resume</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="/assets/Suryansh-Resume.pdf" class="resume-btn btn" download><i class="fas fa-download"></i> Resume</a></li>
+        <li><a href="/assets/Suryansh-Resume.pdf" class="resume-btn btn" ><i class="fas fa-download"></i> Resume</a></li>
         <li>
           <button class="theme-toggle btn" aria-label="Toggle theme" title="Toggle theme">
             <i class="fas fa-moon"></i>
@@ -193,11 +194,10 @@
       </div>
       </div>
     </section>
-
+<!---
   <section class="skills-section fade-in about-content" id="skills">
       <div class="skills fade-in">
           <h3 class="section-title">Skills</h3>
-          <!-- Programming languages marquee using same ticker system -->
           <div class="skills-marquee marquee" aria-label="Programming languages marquee">
             <div class="ticker">
               <div class="ticker__track">
@@ -267,10 +267,10 @@
             </li>
           </ul>
         </div>
-        <!-- Icon ticker removed in favor of languages marquee -->
+
         <div class="skills fade-in">
           <h3 class="section-title">Learning Docket</h3>
-          <!-- Learning Docket marquee using same ticker system -->
+          
           <div class="skills-marquee marquee docket-marquee" aria-label="Learning Docket marquee">
             <div class="ticker">
               <div class="ticker__track">
@@ -327,7 +327,7 @@
               <span>Node Js</span>
             </li>
           </ul>
-        </div>
+        </div>-->
       <!-- After Learning Docket section -->
         <div class="resume-section fade-in " id="resume">
           <h2 class="section-title">My Resume</h2>
@@ -429,9 +429,7 @@
     <section id="contact" class="contact fade-in">
       <h2 class="section-title">Get in Touch</h2>
       <div class="contact-content fade-in"  data-aos-delay="200">
-        <form id="contact-form" netlify novalidate>
-          <!-- Honeypot field for spam bots -->
-          <input type="text" name="_hp" id="_hp" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;" />
+        <form id="contact-form" netlify>
           <div class="form-group">
             <input type="text" id="name" name="name" required placeholder="Your Name">
           </div> 
@@ -447,7 +445,6 @@
               <i class="fas fa-paper-plane plane"></i>
             </div>
           </button>
-          <p id="contact-status" role="status" aria-live="polite" style="margin-top:0.75rem"></p>
         </form>
       </div>
     </section>
